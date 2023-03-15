@@ -1,3 +1,9 @@
-## 0.0.7
+## 0.0.7 (2023-03-15)
 
-* Initial release
+
+### Features
+
+* init ([8aec25c](https://github.com/famebot/hsl-gen/commit/8aec25cb5335f3293346f29359826916eb61f2d6))
+
+
+

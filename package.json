@@ -25,7 +25,7 @@
 	"homepage": "https://github.com/famebot/hsl-gen#readme",
 	"dependencies": {
 		"bumpp": "^9.0.0",
-		"conventional-changelog": "^3.1.25",
+		"conventional-changelog-cli": "^2.2.2",
 		"mocha": "^10.2.0",
 		"prettier": "^2.8.4"
 	},
