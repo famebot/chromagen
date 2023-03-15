@@ -1,0 +1,33 @@
+{
+	"name": "hsl-gen",
+	"version": "0.0.7",
+	"description": "Generates a color scheme with HSL values",
+	"main": "./src/index.js",
+	"scripts": {
+		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+		"format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
+		"release": "bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish",
+		"test": "mocha"
+	},
+	"repository": "https://github.com/famebot/hsl-gen",
+	"keywords": [
+		"hsl",
+		"gen",
+		"generate",
+		"color",
+		"scheme"
+	],
+	"author": "Ricky de Laveaga (https://rdela.com)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/famebot/hsl-gen/issues"
+	},
+	"homepage": "https://github.com/famebot/hsl-gen#readme",
+	"dependencies": {
+		"bumpp": "^9.0.0",
+		"conventional-changelog": "^3.1.25",
+		"mocha": "^10.2.0",
+		"prettier": "^2.8.4"
+	},
+	"type": "module"
+}
