@@ -1,5 +1,5 @@
 {
-	"name": "hsl-gen",
+	"name": "@famebot/hsl-gen",
 	"version": "0.0.7",
 	"description": "Generates a color scheme with HSL values",
 	"main": "./src/index.js",
