@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@famebot/hsl-gen': ^0.0.9
+
+dependencies:
+  '@famebot/hsl-gen': 0.0.9
+
+packages:
+
+  /@famebot/hsl-gen/0.0.9:
+    resolution: {integrity: sha512-A3rNcc7SCbFgihI7TmmKG6K3vEm8G3E2mtYwk2Nqz0OCH7E0s/BB/iF1ztxVm740q7EHvUp0aBGFzjQiHfO3gA==}
+    dev: false

@@ -1,0 +1,15 @@
+{
+	"name": "hsl-gen-example",
+	"version": "1.0.0",
+	"description": "@famebot/hsl-gen example",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ricky de Laveaga (https://rdela.com)",
+	"license": "ISC",
+	"dependencies": {
+		"@famebot/hsl-gen": "^0.0.9"
+	},
+	"type": "module"
+}
