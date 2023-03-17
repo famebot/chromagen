@@ -1,3 +1,7 @@
+# [0.1.0](https://github.com/famebot/hsl-gen/compare/v0.0.9...v0.1.0) (2023-03-17)
+
+
+
 ## [0.0.9](https://github.com/famebot/hsl-gen/compare/v0.0.8...v0.0.9) (2023-03-17)
 
 
