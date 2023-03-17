@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "@famebot/hsl-gen example",
 	"scripts": {
+		"reset": "rm -rf example/node_modules example/pnpm-lock.yaml",
 		"start": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
