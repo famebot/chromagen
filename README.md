@@ -1,5 +1,7 @@
 # hsl-gen
 
+Generates HSL color schemes
+
 ## Installation
 
 hsl-gen works in both node.js and browser environments. For node, install with npm:
