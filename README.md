@@ -1,23 +1,33 @@
-# hsl-gen
+# HSL Gen
 
-Generates HSL color schemes
+HSL Gen (`hsl-gen`), generates HSL color schemes.
 
 ## Installation
 
-hsl-gen works in both node.js and browser environments. For node, install with npm:
+HSL Gen uses [Microbundle](https://github.com/developit/microbundle) to produce ESM ([ECMAScript modules](https://nodejs.org/api/esm.html)), CJS ([CommonJS](https://nodejs.org/api/modules.html)), and UMD ([Universal Module Definition](https://github.com/umdjs/umd)) bundles that work in various environments. For Node.js, install with npm:
 
 ```bash
 npm i @famebot/hsl-gen
 ```
 
+We are testing the various bundle formats, for now `package.json` has the options.
+
 ## Usage
 
-Assuming node.js or something similar:
+Assuming Node.js or something similar:
 
 ```js
-import HSLGen from 'hsl-gen';
-const hslScheme = HSLGen();
-console.log(hslScheme);
+import HSLgen from '@famebot/hsl-gen';
+const colorScheme = HSLgen();
+console.log(colorScheme);
+```
+
+CommonJS `require` syntax:
+
+```js
+const HSLgen = require('@famebot/hsl-gen');
+const colorScheme = HSLgen();
+console.log(colorScheme);
 ```
 
 This will return an object where the variable values below are randomized within acceptable parameters:
@@ -62,8 +72,8 @@ We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next
 }
 ```
 
-Check src/index.js for the nitty gritty.
+Check `src/index.js` for the nitty gritty.
 
 ## License
 
-ISC
+MIT

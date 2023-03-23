@@ -3,8 +3,10 @@
 	"version": "1.0.0",
 	"description": "@famebot/hsl-gen example",
 	"scripts": {
-		"reset": "rm -rf example/node_modules example/pnpm-lock.yaml",
-		"start": "node index.js",
+		"reset": "rm -rf node_modules pnpm-lock.yaml package-lock.json yarn.lock",
+		"start": "node node-esm.js",
+		"enpm": "node node-esm-npm.js",
+		"cjs": "node node-cjs.cjs",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Ricky de Laveaga (https://rdela.com)",
