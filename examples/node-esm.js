@@ -1,3 +1,3 @@
-import HSLgen from '../dist/hsl-gen.module.js';
-const colorScheme = HSLgen();
+import hslGen from '../dist/hsl-gen.module.js';
+const colorScheme = hslGen();
 console.log(colorScheme);

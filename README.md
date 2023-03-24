@@ -17,16 +17,16 @@ We are testing the various bundle formats, for now `package.json` has the option
 Assuming Node.js or something similar:
 
 ```js
-import HSLgen from '@famebot/hsl-gen';
-const colorScheme = HSLgen();
+import hslGen from '@famebot/hsl-gen';
+const colorScheme = hslGen();
 console.log(colorScheme);
 ```
 
 CommonJS `require` syntax:
 
 ```js
-const HSLgen = require('@famebot/hsl-gen');
-const colorScheme = HSLgen();
+const hslGen = require('@famebot/hsl-gen');
+const colorScheme = hslGen();
 console.log(colorScheme);
 ```
 

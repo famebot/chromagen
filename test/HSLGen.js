@@ -1,7 +1,7 @@
-import HSLgen from '../src/index.js';
+import hslGen from '../src/index.js';
 import assert from 'assert';
 
-const colorScheme = HSLgen();
+const colorScheme = hslGen();
 console.log(colorScheme);
 
 describe('HSL Gen', () => {
