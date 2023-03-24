@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/famebot/hsl-gen/compare/v0.2.0...v0.2.1) (2023-03-24)
+
+
+### Bug Fixes
+
+* standardize on `hslGen` not `HSLgen` for UMD compat ([b2b1f17](https://github.com/famebot/hsl-gen/commit/b2b1f17f5b51a5569013c2696300fb92ca5924cb))
+
+
+
 # [0.2.0](https://github.com/famebot/hsl-gen/compare/v0.1.3...v0.2.0) (2023-03-24)
 
 
