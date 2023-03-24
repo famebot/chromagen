@@ -1,11 +1,11 @@
-import HSLGen from '../src/index.js';
+import HSLgen from '../src/index.js';
 import assert from 'assert';
 
-const hslScheme = HSLGen();
-console.log(hslScheme);
+const colorScheme = HSLgen();
+console.log(colorScheme);
 
 describe('HSL Gen', () => {
 	it('should generate a color scheme', () => {
-		assert.equal(Object.keys(hslScheme).length, 14);
+		assert.equal(Object.keys(colorScheme).length, 14);
 	});
 });
