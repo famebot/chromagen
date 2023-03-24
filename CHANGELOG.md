@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/famebot/hsl-gen/compare/v0.1.3...v0.2.0) (2023-03-24)
+
+
+### Features
+
+* provide CLS and UMD bundles via Microbundle ([5a39ee6](https://github.com/famebot/hsl-gen/commit/5a39ee6c83c1c2d2d5944e14376adef7008eabca))
+
+
+
 ## [0.1.3](https://github.com/famebot/hsl-gen/compare/v0.1.2...v0.1.3) (2023-03-17)
 
 

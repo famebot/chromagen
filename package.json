@@ -1,6 +1,6 @@
 {
 	"name": "@famebot/hsl-gen",
-	"version": "0.1.3",
+	"version": "0.2.0",
 	"description": "Generates a color scheme with HSL values",
 	"type": "module",
 	"source": "./src/index.js",
