@@ -13,7 +13,7 @@
 	"author": "Ricky de Laveaga (https://rdela.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@famebot/hsl-gen": "^0.2.1"
+		"@famebot/hsl-gen": "^0.2.2"
 	},
 	"type": "module"
 }

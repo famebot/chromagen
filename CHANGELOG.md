@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/famebot/hsl-gen/compare/v0.2.1...v0.2.2) (2023-04-01)
+
+
+### Features
+
+* add noop build script for umd example hosting ([8c54b52](https://github.com/famebot/hsl-gen/commit/8c54b5272c2703c86f2c98ff6ea1e4d4cbee92fe))
+
+
+
 ## [0.2.1](https://github.com/famebot/hsl-gen/compare/v0.2.0...v0.2.1) (2023-03-24)
 
 
