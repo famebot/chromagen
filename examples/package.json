@@ -3,16 +3,17 @@
 	"version": "1.0.0",
 	"description": "@famebot/hsl-gen example",
 	"scripts": {
+		"build": "echo \"noop: prebuilt\" && exit 0",
+		"cjs": "node node-cjs.cjs",
+		"enpm": "node node-esm-npm.js",
 		"reset": "rm -rf node_modules pnpm-lock.yaml package-lock.json yarn.lock",
 		"start": "node node-esm.js",
-		"enpm": "node node-esm-npm.js",
-		"cjs": "node node-cjs.cjs",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Ricky de Laveaga (https://rdela.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@famebot/hsl-gen": "^0.2.0"
+		"@famebot/hsl-gen": "^0.2.1"
 	},
 	"type": "module"
 }
