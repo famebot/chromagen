@@ -9,7 +9,12 @@
 
 # [0.3.0](https://github.com/famebot/hsl-gen/compare/v0.2.2...v0.3.0) (2023-04-03)
 
+
+### Features
+
 * add raw values to returned object to expand customization possibilities ([c9b9b23](https://github.com/famebot/hsl-gen/commit/c9b9b2382db0b233e7ffb3e9e6f9f6f939bc512d))
+
+
 
 ## [0.2.2](https://github.com/famebot/hsl-gen/compare/v0.2.1...v0.2.2) (2023-04-01)
 
