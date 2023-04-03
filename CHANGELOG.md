@@ -1,3 +1,12 @@
+## [0.3.3](https://github.com/famebot/hsl-gen/compare/v0.3.2...v0.3.3) (2023-04-03)
+
+
+### Bug Fixes
+
+* UMD color contrast ([112ede0](https://github.com/famebot/hsl-gen/commit/112ede0ff56e3feb66d407d978d61e1b02113241))
+
+
+
 ## [0.3.2](https://github.com/famebot/hsl-gen/compare/v0.3.1...v0.3.2) (2023-04-03)
 
 
