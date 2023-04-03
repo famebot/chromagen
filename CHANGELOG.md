@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/famebot/hsl-gen/compare/v0.3.0...v0.3.1) (2023-04-03)
+
+
+### Features
+
+* use raw hue in UMD example ([2541ce1](https://github.com/famebot/hsl-gen/commit/2541ce1ef7b272e8579b559954846d848bef93a7))
+
+
+
 # [0.3.0](https://github.com/famebot/hsl-gen/compare/v0.2.2...v0.3.0) (2023-04-03)
 
 * add raw values to returned object to expand customization possibilities ([c9b9b23](https://github.com/famebot/hsl-gen/commit/c9b9b2382db0b233e7ffb3e9e6f9f6f939bc512d))
