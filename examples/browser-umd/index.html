@@ -1,6 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8">
 	<title>HSL Gen</title>
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+	<meta name="theme-color" content="navy">
 	<style>
 		:root {
 			--background-color-dark: navy;
@@ -13,10 +14,15 @@
 			--text-color-dark: silver;
 		}
 		body {
+			/*  
+				https://css-tricks.com/the-notch-and-css/
+				https://css-tricks.com/meta-theme-color-and-trickery/
+			*/
 			background-color: var(--background-color-light);
-			background-image: linear-gradient(315deg, var(--secondary), var(--background-color-light), var(--tertiary));
+			background-image: linear-gradient(var(--background-color-light), 50%, var(--tertiary), 88%, var(--secondary));
 			color: var(--text-color-light);
 			min-height: 100vh;
+			min-height: 100dvh;
 			text-align: center;
 		}
 		a[href] {
@@ -34,6 +40,7 @@
 			background-image: linear-gradient(45deg, var(--secondary), var(--tertiary), var(--background-color-light));
 			border: .15625em solid var(--background-color-dark);
 			border-radius: 99999px;
+			color: var(--text-color-light);
 			font-size: 1.5em;
 			padding: 0.25em 0.5em;
 		}
@@ -50,7 +57,7 @@
 		@media (prefers-color-scheme: dark) {
 			body {
 				background-color: var(--background-color-dark);
-				background-image: linear-gradient(135deg, var(--secondarydarker), 12%, var(--background-color-dark), 88%, var(--tertiarydarker));
+				background-image: linear-gradient(var(--background-color-dark), 50%, var(--tertiarydarker), 88%, var(--secondarydarker));
 				color: var(--text-color-dark);
 			}
 			a[href] {
@@ -77,7 +84,7 @@
 	</style>
 </head><body>
 	<h1>HSL Gen</h1>
-	<p>UMD edition 0.2.2 &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
+	<p>UMD edition 0.3.0 &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
 	<button onclick="window.location.reload()">🔄 Reload Color Scheme 🌈</button>
 	<p>💡 Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a>.</p>
 	<p>
@@ -91,7 +98,6 @@
 		const colorScheme = hslGen();
 		console.log(colorScheme);
 		const docstyle = document.documentElement.style;
-		console.log(docstyle);
 		docstyle.setProperty('--background-color-light', colorScheme.huehsl);
 		docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
 		docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
@@ -100,5 +106,24 @@
 		docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
 		docstyle.setProperty('--secondary', colorScheme.comphsl);
 		docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
+		
+		function activateColorScheme() {
+			const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
+			console.log(colorSchemeQueryList)
+			if ((colorSchemeQueryList.media === 'not all') 
+			|| (colorSchemeQueryList.matches === true)) {
+				document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
+			} else {
+				document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.darkhuehsl);
+			}
+		}
+		const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
+		const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
+		darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
+		lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
+		activateColorScheme();
+		
+		// quick hack til 0.3.0 is up with hue property, currently includes commas when hue is 2 digits
+		document.querySelector('h1').innerHTML += ` (hue: ${colorScheme.huehsl.slice(4,7)})`;
 	</script>
 </body></html>

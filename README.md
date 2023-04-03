@@ -2,19 +2,15 @@
 
 HSL Gen (`hsl-gen`), generates HSL color schemes.
 
-## Installation
+## Installation and Usage
 
-HSL Gen uses [Microbundle](https://github.com/developit/microbundle) to produce ESM ([ECMAScript modules](https://nodejs.org/api/esm.html)), CJS ([CommonJS](https://nodejs.org/api/modules.html)), and UMD ([Universal Module Definition](https://github.com/umdjs/umd)) bundles that work in various environments. For Node.js, install with npm:
+HSL Gen uses [Microbundle](https://github.com/developit/microbundle) to produce ESM ([ECMAScript modules](https://nodejs.org/api/esm.html)), CJS ([CommonJS](https://nodejs.org/api/modules.html)), and UMD ([Universal Module Definition](https://github.com/umdjs/umd)) bundles that work in various environments.
+
+### Node.js and similar environments
 
 ```bash
 npm i @famebot/hsl-gen
 ```
-
-We are testing the various bundle formats, for now `package.json` has the options.
-
-## Usage
-
-Assuming Node.js or something similar:
 
 ```js
 import hslGen from '@famebot/hsl-gen';
@@ -30,10 +26,34 @@ const colorScheme = hslGen();
 console.log(colorScheme);
 ```
 
-This will return an object where the variable values below are randomized within acceptable parameters:
+### Browser use client-side
+
+For browser use, include `dist/hsl-gen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser-umd/index.html` demonstrates. View the latest version at <https://hsl-gen.netlify.app>
+
+Using the UMD bundle in the browser:
+
+```html
+<script src="https://unpkg.com/@famebot/hsl-gen@0.3.0/dist/hsl-gen.umd.js"></script>
+<script>
+    const colorScheme = hslGen();
+    console.log(colorScheme);
+</script>
+```
+
+### Step by step
+
+Any method above will return an object where the variable values below are randomized within acceptable parameters:
 
 ```js
 {
+    hue: hue,
+    complement: complement,
+    analogous: analogous,
+    saturation: saturation,
+    lightness: lightness,
+    darkness: darkness,
+    darker: darker,
+    lighter: lighter,
     analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
     analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
     comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
@@ -55,6 +75,14 @@ We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next
 
 ```js
 {
+    hue: 144,
+    complement: 323,
+    analogous: 10,
+    saturation: 99,
+    lightness: 77,
+    darkness: 4,
+    darker: 16,
+    lighter: 68,
     analhsl: 'hsl(10, 99%, 77%)',
     analhsldarker: 'hsl(10, 99%, 48%)',
     comphsl: 'hsl(323, 99%, 77%)',

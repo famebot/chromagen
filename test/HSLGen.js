@@ -5,7 +5,7 @@ const colorScheme = hslGen();
 console.log(colorScheme);
 
 describe('HSL Gen', () => {
-	it('should generate a color scheme', () => {
-		assert.equal(Object.keys(colorScheme).length, 14);
+	it('should return a color scheme object with 22 properties', () => {
+		assert.equal(Object.keys(colorScheme).length, 22);
 	});
 });

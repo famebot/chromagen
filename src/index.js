@@ -34,10 +34,20 @@ export default () => {
 	// very dark or black text
 	const darkness = getRandomIntInclusive(0, 24);
 
+	// typically a more extreme darkness/lightness unless the value is already
+	// extreme then a moderate value to contrast well with the extreme value
 	let darker = darkness < 8 ? 16 : 0;
 	let lighter = lightness > 76 ? 68 : 84;
 
 	return {
+		hue: hue,
+		complement: complement,
+		analogous: analogous,
+		saturation: saturation,
+		lightness: lightness,
+		darkness: darkness,
+		darker: darker,
+		lighter: lighter,
 		analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
 		analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
 		comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
