@@ -1,6 +1,6 @@
 {
 	"name": "hsl-gen-example",
-	"version": "0.3.1",
+	"version": "1.0.0",
 	"description": "@famebot/hsl-gen example",
 	"scripts": {
 		"build": "echo \"noop: prebuilt\" && exit 0",
@@ -14,7 +14,7 @@
 	"author": "Ricky de Laveaga (https://rdela.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@famebot/hsl-gen": "^0.3.1"
+		"@famebot/hsl-gen": "latest"
 	},
 	"type": "module"
 }

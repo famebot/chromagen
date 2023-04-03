@@ -33,7 +33,7 @@ For browser use, include `dist/hsl-gen.umd.js` or use [unpkg](https://unpkg.com)
 Using the UMD bundle in the browser:
 
 ```html
-<script src="https://unpkg.com/@famebot/hsl-gen@0.3.1/dist/hsl-gen.umd.js"></script>
+<script src="https://unpkg.com/@famebot/hsl-gen/dist/hsl-gen.umd.js"></script>
 <script>
     const colorScheme = hslGen();
     console.log(colorScheme);

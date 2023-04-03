@@ -26,14 +26,14 @@
 			text-align: center;
 		}
 		a[href] {
-			color: var(--secondarydarker);
+			color: var(--text-color-light);
 		}
 		a[href]:visited {
 			color: var(--tertiarydarker);
 		}
 		a[href]:hover,
 		a[href]:active {
-			color: var(--text-color-light);
+			color: var(--secondarydarker);
 		}
 		button {
 			background-color: var(--tertiary);
@@ -64,7 +64,7 @@
 				color: var(--secondary);
 			}
 			a[href]:visited {
-				color: var(--background-color-light);
+				color: var(--text-color-dark);
 			}
 			a[href]:hover,
 			a[href]:active {
@@ -84,16 +84,16 @@
 	</style>
 </head><body>
 	<h1>HSL Gen</h1>
-	<p>UMD edition 0.3.1 &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
 	<button onclick="window.location.reload()">🔄 Reload Color Scheme 🌈</button>
 	<p>💡 Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a>.</p>
 	<p>
-		Try switching with developer tools in 
-		<a href="https://developer.chrome.com/docs/devtools/rendering/apply-effects/#enable-automatic-dark-mode">Chrome</a>, 
-		<a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/">Safari</a>, 
-		or <a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a>.
+		Toggle light/dark: 
+		<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
+		<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
+		<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
 	</p>
-	<script src="https://unpkg.com/@famebot/hsl-gen@0.3.1/dist/hsl-gen.umd.js"></script>
+	<p>UMD edition &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
+	<script src="https://unpkg.com/@famebot/hsl-gen/dist/hsl-gen.umd.js"></script>
 	<script>
 		const colorScheme = hslGen();
 		console.log(colorScheme);
