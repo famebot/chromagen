@@ -71,7 +71,7 @@ Any method above will return an object where the variable values below are rando
 }
 ```
 
-We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next we set complement (secondary) and analogous (tertiary) values, then saturtion and lightness within acceptable parameters for light and dark text. An example generated scheme looks like:
+We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next we set `complement` (secondary) and `analogous` (tertiary) values, then `saturation` and `lightness` and `darkness` within acceptable parameters for light and dark text, along with companion `lighter` and `darker` values. An example generated scheme looks like:
 
 ```js
 {
