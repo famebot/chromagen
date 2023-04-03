@@ -1,6 +1,6 @@
 # HSL Gen
 
-HSL Gen (`hsl-gen`), generates HSL color schemes.
+HSL Gen (`hsl-gen`) generates HSL color schemes.
 
 ## Installation and Usage
 
