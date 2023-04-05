@@ -1,3 +1,12 @@
+## [0.3.4](https://github.com/famebot/hsl-gen/compare/v0.3.3...v0.3.4) (2023-04-05)
+
+
+### Features
+
+* use fn instead of reloading page in UMD example ([e9c423c](https://github.com/famebot/hsl-gen/commit/e9c423c247c618f98543432847aad903a7564645))
+
+
+
 ## [0.3.3](https://github.com/famebot/hsl-gen/compare/v0.3.2...v0.3.3) (2023-04-03)
 
 
