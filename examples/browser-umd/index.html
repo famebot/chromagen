@@ -83,8 +83,8 @@
 		}
 	</style>
 </head><body>
-	<h1>HSL Gen</h1>
-	<button onclick="window.location.reload()">🔄 Reload Color Scheme 🌈</button>
+	<h1>HSL Gen<span id="hsl-gen-hue"></span></h1>
+	<button onclick="rainbow()">🔄 Reload Color Scheme 🌈</button>
 	<p>💡 Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a>.</p>
 	<p>
 		Toggle light/dark: 
@@ -95,34 +95,37 @@
 	<p>UMD edition &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
 	<script src="https://unpkg.com/@famebot/hsl-gen/dist/hsl-gen.umd.js"></script>
 	<script>
-		const colorScheme = hslGen();
-		console.log(colorScheme);
-		const docstyle = document.documentElement.style;
-		docstyle.setProperty('--background-color-light', colorScheme.huehsl);
-		docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
-		docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
-		docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
-		docstyle.setProperty('--tertiary', colorScheme.analhsl);
-		docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
-		docstyle.setProperty('--secondary', colorScheme.comphsl);
-		docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
-		
-		function activateColorScheme() {
-			const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
-			console.log(colorSchemeQueryList)
-			if ((colorSchemeQueryList.media === 'not all') 
-			|| (colorSchemeQueryList.matches === true)) {
-				document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
-			} else {
-				document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.darkhuehsl);
+		const rainbow = () => {
+			const colorScheme = hslGen();
+			console.log(colorScheme);
+			const docstyle = document.documentElement.style;
+			docstyle.setProperty('--background-color-light', colorScheme.huehsl);
+			docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
+			docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
+			docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
+			docstyle.setProperty('--tertiary', colorScheme.analhsl);
+			docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
+			docstyle.setProperty('--secondary', colorScheme.comphsl);
+			docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
+			
+			function activateColorScheme() {
+				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
+				console.log(colorSchemeQueryList)
+				if ((colorSchemeQueryList.media === 'not all') 
+				|| (colorSchemeQueryList.matches === true)) {
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
+				} else {
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.darkhuehsl);
+				}
 			}
+			const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
+			const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
+			darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
+			lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
+			activateColorScheme();
+			
+			document.getElementById('hsl-gen-hue').innerHTML = ` (Hue: ${colorScheme.hue})`;
 		}
-		const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
-		const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
-		darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
-		lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
-		activateColorScheme();
-		
-		document.querySelector('h1').innerHTML += ` (hue: ${colorScheme.hue})`;
+		rainbow();
 	</script>
 </body></html>

@@ -30,6 +30,9 @@ console.log(colorScheme);
 
 For browser use, include `dist/hsl-gen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser-umd/index.html` demonstrates. View the latest version at <https://hsl-gen.netlify.app>
 
+Latest UMD bundle on unpkg:  
+<https://unpkg.com/@famebot/hsl-gen/dist/hsl-gen.umd.js>
+
 Using the UMD bundle in the browser:
 
 ```html
