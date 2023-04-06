@@ -63,6 +63,6 @@ export default () => {
 		darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
 		darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
 		darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-		darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`
+		darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`,
 	};
 };

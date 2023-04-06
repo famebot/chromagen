@@ -1,3 +1,12 @@
+## [0.3.5](https://github.com/famebot/hsl-gen/compare/v0.3.4...v0.3.5) (2023-04-06)
+
+
+### Features
+
+* add analhsltext and comphsltext using darkness ([9177436](https://github.com/famebot/hsl-gen/commit/91774367d894ddb0303ceecfb95be77c12237017))
+
+
+
 ## [0.3.4](https://github.com/famebot/hsl-gen/compare/v0.3.3...v0.3.4) (2023-04-05)
 
 
