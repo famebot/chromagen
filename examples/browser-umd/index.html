@@ -8,8 +8,10 @@
 			--background-color-light: aqua;
 			--secondary: lime;
 			--secondarydarker: green;
+			--secondarytext: darkgreen;
 			--tertiary: fuchsia;
 			--tertiarydarker: purple;
+			--tertiarytext: indigo;
 			--text-color-light: black;
 			--text-color-dark: silver;
 		}
@@ -29,11 +31,11 @@
 			color: var(--text-color-light);
 		}
 		a[href]:visited {
-			color: var(--secondarydarker);
+			color: var(--secondarytext);
 		}
 		a[href]:hover,
 		a[href]:active {
-			color: var(--tertiarydarker);
+			color: var(--tertiarytext);
 		}
 		button {
 			background-color: var(--tertiary);
@@ -105,8 +107,10 @@
 			docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
 			docstyle.setProperty('--tertiary', colorScheme.analhsl);
 			docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
+			docstyle.setProperty('--tertiarytext', colorScheme.analhsltext);
 			docstyle.setProperty('--secondary', colorScheme.comphsl);
 			docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
+			docstyle.setProperty('--secondarytext', colorScheme.comphsltext);
 			
 			function activateColorScheme() {
 				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');

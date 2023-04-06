@@ -2,6 +2,12 @@
 
 HSL Gen (`hsl-gen`) generates HSL color schemes.
 
+- [Demo](https://hsl-gen.netlify.app)
+- [HSL Gen on GitHub](https://github.com/famebot/hsl-gen)
+- [@famebot/hsl-gen on npm](https://www.npmjs.com/package/@famebot/hsl-gen)
+
+[![npm Version](https://img.shields.io/npm/v/@famebot/hsl-gen.svg?style=for-the-badge)](https://www.npmjs.com/package/@famebot/hsl-gen) &nbsp; [![GitHub issues](https://img.shields.io/github/issues/famebot/hsl-gen.svg?style=for-the-badge)](https://github.com/famebot/hsl-gen/issues)
+
 ## Installation and Usage
 
 HSL Gen uses [Microbundle](https://github.com/developit/microbundle) to produce ESM ([ECMAScript modules](https://nodejs.org/api/esm.html)), CJS ([CommonJS](https://nodejs.org/api/modules.html)), and UMD ([Universal Module Definition](https://github.com/umdjs/umd)) bundles that work in various environments.
@@ -59,10 +65,10 @@ Any method above will return an object where the variable values below are rando
     lighter: lighter,
     analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
     analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
-    analhsltext: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
+    analhsltext: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
     comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
     comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
-    comphsltext: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
+    comphsltext: `hsl(${complement}, ${saturation}%, ${darker}%)`,
     huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
     huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
     huehslactive: `hsl(${hue}, 64%, 92%)`,
@@ -80,30 +86,30 @@ We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next
 
 ```js
 {
-    hue: 144,
-    complement: 323,
-    analogous: 10,
-    saturation: 99,
-    lightness: 77,
-    darkness: 4,
-    darker: 16,
-    lighter: 68,
-    analhsl: 'hsl(10, 99%, 77%)',
-    analhsldarker: 'hsl(10, 99%, 48%)',
-    analhsltext: `hsl(10, 99%, 4%)`,
-    comphsl: 'hsl(323, 99%, 77%)',
-    comphsldarker: 'hsl(323, 99%, 48%)',
-    comphsltext: `hsl(323, 99%, 4%)`,
-    huehsl: 'hsl(144, 99%, 77%)',
-    huehsllighter: 'hsl(144, 99%, 68%)',
-    huehslactive: 'hsl(144, 64%, 92%)',
-    huehslhover: 'hsl(144, 64%, 84%)',
-    huehslmuted: 'hsl(144, 64%, 68%)',
-    darkhuehsl: 'hsl(144, 99%, 4%)',
-    darkhuehsldarker: 'hsl(144, 99%, 16%)',
-    darkhuehslactive: 'hsl(144, 64%, 36%)',
-    darkhuehslhover: 'hsl(144, 64%, 28%)',
-    darkhuehslmuted: 'hsl(144, 64%, 16%)'
+    hue: 33,
+    complement: 212,
+    analogous: 258,
+    saturation: 87,
+    lightness: 64,
+    darkness: 15,
+    darker: 0,
+    lighter: 84,
+    analhsl: 'hsl(258, 87%, 64%)',
+    analhsldarker: 'hsl(258, 87%, 48%)',
+    analhsltext: 'hsl(258, 87%, 0%)',
+    comphsl: 'hsl(212, 87%, 64%)',
+    comphsldarker: 'hsl(212, 87%, 48%)',
+    comphsltext: 'hsl(212, 87%, 0%)',
+    huehsl: 'hsl(33, 87%, 64%)',
+    huehsllighter: 'hsl(33, 87%, 84%)',
+    huehslactive: 'hsl(33, 64%, 92%)',
+    huehslhover: 'hsl(33, 64%, 84%)',
+    huehslmuted: 'hsl(33, 64%, 84%)',
+    darkhuehsl: 'hsl(33, 87%, 15%)',
+    darkhuehsldarker: 'hsl(33, 87%, 0%)',
+    darkhuehslactive: 'hsl(33, 64%, 36%)',
+    darkhuehslhover: 'hsl(33, 64%, 28%)',
+    darkhuehslmuted: 'hsl(33, 64%, 0%)'
 }
 ```
 
