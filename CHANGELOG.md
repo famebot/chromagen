@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/famebot/hsl-gen/compare/v0.3.5...v0.4.0) (2023-04-06)
+
+
+### Bug Fixes
+
+* use darker instead of darkness for (anal|comp)hsltext ([19ea482](https://github.com/famebot/hsl-gen/commit/19ea482bc5884b376d160d5766d54bc473c50f69))
+
+
+
 ## [0.3.5](https://github.com/famebot/hsl-gen/compare/v0.3.4...v0.3.5) (2023-04-06)
 
 
