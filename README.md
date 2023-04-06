@@ -59,8 +59,10 @@ Any method above will return an object where the variable values below are rando
     lighter: lighter,
     analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
     analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
+    analhsltext: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
     comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
     comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
+    comphsltext: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
     huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
     huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
     huehslactive: `hsl(${hue}, 64%, 92%)`,
@@ -70,7 +72,7 @@ Any method above will return an object where the variable values below are rando
     darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
     darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
     darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-    darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`,
+    darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`
 }
 ```
 
@@ -88,8 +90,10 @@ We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next
     lighter: 68,
     analhsl: 'hsl(10, 99%, 77%)',
     analhsldarker: 'hsl(10, 99%, 48%)',
+    analhsltext: `hsl(10, 99%, 4%)`,
     comphsl: 'hsl(323, 99%, 77%)',
     comphsldarker: 'hsl(323, 99%, 48%)',
+    comphsltext: `hsl(323, 99%, 4%)`,
     huehsl: 'hsl(144, 99%, 77%)',
     huehsllighter: 'hsl(144, 99%, 68%)',
     huehslactive: 'hsl(144, 64%, 92%)',

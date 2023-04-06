@@ -50,8 +50,10 @@ export default () => {
 		lighter: lighter,
 		analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
 		analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
+		analhsltext: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
 		comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
 		comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
+		comphsltext: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
 		huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
 		huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
 		huehslactive: `hsl(${hue}, 64%, 92%)`,
@@ -61,6 +63,6 @@ export default () => {
 		darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
 		darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
 		darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-		darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`,
+		darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`
 	};
 };
