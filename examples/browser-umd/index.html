@@ -4,16 +4,21 @@
 	<meta name="theme-color" content="navy">
 	<style>
 		:root {
-			--background-color-dark: navy;
+			--background-color-dark: midnightblue;
 			--background-color-light: aqua;
-			--secondary: lime;
-			--secondarydarker: green;
-			--secondarytext: darkgreen;
+			--primary-lowmid: blue;
+			--primary-xlight: aliceblue;
+			--secondary: orange;
+			--secondarymid: darkorange;
+			--secondarydark: coral;
+			--secondarydarker: chocolate;
 			--tertiary: fuchsia;
-			--tertiarydarker: purple;
-			--tertiarytext: indigo;
+			--tertiarymid: darkorchid;
+			--tertiarydark: darkviolet;
+			--tertiarydarker: indigo;
 			--text-color-light: black;
-			--text-color-dark: silver;
+			--text-color-dark: lightcyan;
+			--swatch-size: 8.375rem;
 		}
 		body {
 			/*  
@@ -23,6 +28,7 @@
 			background-color: var(--background-color-light);
 			background-image: linear-gradient(var(--background-color-light), 50%, var(--tertiary), 88%, var(--secondary));
 			color: var(--text-color-light);
+			font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Oxygen, Ubuntu, Cantarell, 'Open Sans', Arial, sans-serif;
 			min-height: 100vh;
 			min-height: 100dvh;
 			text-align: center;
@@ -56,10 +62,36 @@
 			background-color: var(--background-color-light);
 			border-color: var(--tertiarydarker);
 		}
+
+		.swatches {
+			list-style: none;
+			margin: 0;
+			width: 100%;
+			padding: 0;
+			display: flex;
+			gap: calc(var(--swatch-size) / 8);
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+		}
+		.swatches figure {
+			max-width: var(--swatch-size);
+			margin: 0;
+		}
+		.swatches figure span {
+			background-color: gray;
+			display: block;
+			height: var(--swatch-size);
+			width: var(--swatch-size);
+			margin: 0 auto;
+		}
+		.swatches figcaption {
+			margin-top: 0.5rem;
+		}
 		@media (prefers-color-scheme: dark) {
 			body {
 				background-color: var(--background-color-dark);
-				background-image: linear-gradient(var(--background-color-dark), 50%, var(--tertiarydarker), 88%, var(--secondarydarker));
+				background-image: linear-gradient(var(--background-color-dark), 50%, var(--tertiarydark), 88%, var(--secondarydark));
 				color: var(--text-color-dark);
 			}
 			a[href] {
@@ -86,7 +118,7 @@
 	</style>
 </head><body>
 	<h1>HSL Gen<span id="hsl-gen-hue"></span></h1>
-	<button onclick="rainbow()">🔄 Reload Color Scheme 🌈</button>
+	<button onclick="rainbow()">Regenerate Colors</button>
 	<p>💡 Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a>.</p>
 	<p>
 		Toggle light/dark: 
@@ -95,22 +127,160 @@
 		<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
 	</p>
 	<p>UMD edition &middot; <a href="https://github.com/famebot/hsl-gen">Source code on GitHub</a></p>
+	<h2>Colors</h2>
+	<p>Click or tap a swatch top copy the HSL value to your clipboard.</p>
+	<ul class="swatches">
+		<li>
+			<figure>
+				<span
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--primary-xlight);"
+				></span>
+				<figcaption>primary-xlight</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--text-color-dark);"
+				></span>
+				<figcaption>text-color-dark</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--background-color-light);"
+				></span>
+				<figcaption>background-color-light</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--primary-lowmid);"
+				></span>
+				<figcaption>primary-lowmid</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--background-color-dark);"
+				></span>
+				<figcaption>background-color-dark</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--text-color-light);"
+				></span>
+				<figcaption>text-color-light</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--tertiary);"
+				></span>
+				<figcaption>tertiary</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--tertiarymid);"
+				></span>
+				<figcaption>tertiarymid</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--tertiarydark);"
+				></span>
+				<figcaption>tertiarydark</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--tertiarydarker);"
+				></span>
+				<figcaption>tertiarydarker</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--secondary);"
+				></span>
+				<figcaption>secondary</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--secondarymid);"
+				></span>
+				<figcaption>secondarymid</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--secondarydark);"
+				></span>
+				<figcaption>secondarydark</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--secondarydarker);"
+				></span>
+				<figcaption>secondarydarker</figcaption>
+			</figure>
+		</li>
+	</ul>
 	<script src="https://unpkg.com/@famebot/hsl-gen/dist/hsl-gen.umd.js"></script>
 	<script>
 		const rainbow = () => {
 			const colorScheme = hslGen();
 			console.log(colorScheme);
+			// https://davidwalsh.name/css-variables-javascript
 			const docstyle = document.documentElement.style;
+			// primary hue: light and dark
 			docstyle.setProperty('--background-color-light', colorScheme.huehsl);
 			docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
 			docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
 			docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
-			docstyle.setProperty('--tertiary', colorScheme.analhsl);
-			docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
-			docstyle.setProperty('--tertiarytext', colorScheme.analhsltext);
+			docstyle.setProperty('--primary-xlight', colorScheme.huehslxlight);
+			docstyle.setProperty('--primary-lowmid', colorScheme.darkhuehsllowmid);
+			// complement
 			docstyle.setProperty('--secondary', colorScheme.comphsl);
+			docstyle.setProperty('--secondarymid', colorScheme.comphslmid);
+			docstyle.setProperty('--secondarydark', colorScheme.comphsldark);
 			docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
-			docstyle.setProperty('--secondarytext', colorScheme.comphsltext);
+			// analogous
+			docstyle.setProperty('--tertiary', colorScheme.analhsl);
+			docstyle.setProperty('--tertiarymid', colorScheme.analhslmid);
+			docstyle.setProperty('--tertiarydark', colorScheme.analhsldark);
+			docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
 			
 			function activateColorScheme() {
 				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
@@ -131,5 +301,46 @@
 			document.getElementById('hsl-gen-hue').innerHTML = ` (Hue: ${colorScheme.hue})`;
 		}
 		rainbow();
+	</script>
+	<script src="https://unpkg.com/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+	<script>
+		function copyText(textToCopy) {
+			// console.log(`attempting to copy: ${textToCopy}`);
+			// Copy the text inside the text field
+			let isDefined = (textToCopy !== 'undefined');
+			if (navigator.clipboard && isDefined) {
+				// console.log(`clipboard available`);
+				navigator.clipboard.writeText(textToCopy);
+
+				Swal.fire({
+					background: `var(--background-color-light)`,
+					icon: 'success',
+					showConfirmButton: false,
+					title: `Copied ${textToCopy}`,
+					timer: 1500,
+				});
+			} else {
+				// console.log(`value missing or clipboard unavailable`);
+				// potential error on iOS, due to lack of secure origin:
+				// TypeError: undefined is not an object (evaluating 'navigator.clipboard.writeText')
+				// https://webkit.org/blog/10855/async-clipboard-api/
+				// > The API is limited to secure contexts, which means that 
+				// > navigator.clipboard is not present for http:// websites.
+				Swal.fire({
+					background: `var(--background-color-light)`,
+					icon: 'error',
+					showConfirmButton: false,
+					title: `Not copied: Value missing or HTTPS required`,
+					timer: 1500,
+				});
+			}
+		}
+		
+		function copyBackgroundColor(cSpan) {
+			const bColorProp = cSpan.style.backgroundColor.slice(4,-1)
+			const bColor = getComputedStyle(document.documentElement).getPropertyValue(bColorProp);
+			console.log(bColor);
+			copyText(bColor);
+		}
 	</script>
 </body></html>
