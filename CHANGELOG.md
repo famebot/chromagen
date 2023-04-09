@@ -1,3 +1,60 @@
+# [0.5.0](https://github.com/famebot/hsl-gen/compare/v0.4.0...v0.5.0) (2023-04-09)
+
+
+### Features
+
+* xlight, midrange, lowmid, swatch palette ([5b628a8](https://github.com/famebot/hsl-gen/commit/5b628a87ca4ee25cdaae49ee76592ce7ea6c6f3e))
+
+
+### BREAKING CHANGES
+
+* Deprecated huehslactive, huehslhover, huehslmuted,
+darkhuehslactive, darkhuehslhover, and darkhuehslmuted
+
+🎲 All mixing values now randomly generated 👾
+
+- General reordering and organization of `src/index.js`
+- mega update to `examples/browser-umd/index.html`
+  - now shows swatch palette and supports copying values
+
+New raw mixing values
+
+- `xlight`: 84-92
+- `midrange`: 48-64
+- `lowmid`: 28-36
+
+Usage
+
+- `midrange` used for `analhslmid` and `comphslmid` lightness
+
+DEPRECATED color scheme values
+
+Goodbye
+
+- `huehslactive`
+- `huehslhover`
+- `huehslmuted`
+- `darkhuehslactive`
+- `darkhuehslhover`
+- `darkhuehslmuted`
+
+Hello `huehslxlight` and `darkhuehsllowmid`
+
+`huehslxlight`
+
+Replaces `huehslactive` and `huehslhover`
+
+- `xlight` for lightness
+- `midrange` for saturation?
+
+`darkhuehsllowmid`
+
+Replaces `darkhuehslactive` and `darkhuehslhover`
+
+- lowmid for lightness
+
+
+
 # [0.4.0](https://github.com/famebot/hsl-gen/compare/v0.3.5...v0.4.0) (2023-04-06)
 
 

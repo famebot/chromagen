@@ -55,30 +55,35 @@ Any method above will return an object where the variable values below are rando
 
 ```js
 {
+    // raw mixing values
     hue: hue,
     complement: complement,
     analogous: analogous,
     saturation: saturation,
+    xlight: xlight,
+    lighter: lighter,
     lightness: lightness,
+    midrange: midrange,
+    lowmid: lowmid,
     darkness: darkness,
     darker: darker,
-    lighter: lighter,
-    analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
-    analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
-    analhsltext: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
-    comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
-    comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
-    comphsltext: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+    // primary hue: light and dark
     huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
     huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
-    huehslactive: `hsl(${hue}, 64%, 92%)`,
-    huehslhover: `hsl(${hue}, 64%, 84%)`,
-    huehslmuted: `hsl(${hue}, 64%, ${lighter}%)`,
+    huehslxlight: `hsl(${hue}, ${saturation}%, ${xlight}%)`,
     darkhuehsl: `hsl(${hue}, ${saturation}%, ${darkness}%)`,
     darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
-    darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
-    darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-    darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`
+    darkhuehsllowmid: `hsl(${hue}, ${saturation}%, ${lowmid}%)`,
+    // complement
+    comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
+    comphslmid: `hsl(${complement}, ${saturation}%, ${midrange}%)`,
+    comphsldark: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
+    comphsldarker: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+    // analogous
+    analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
+    analhslmid: `hsl(${analogous}, ${saturation}%, ${midrange}%)`,
+    analhsldark: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
+    analhsldarker: `hsl(${analogous}, ${saturation}%, ${darker}%)`
 }
 ```
 
@@ -86,30 +91,31 @@ We first seed the primary color, `hue` and `darkhue` for dark mode schemes. Next
 
 ```js
 {
-    hue: 33,
-    complement: 212,
-    analogous: 258,
-    saturation: 87,
-    lightness: 64,
-    darkness: 15,
-    darker: 0,
+    hue: 285,
+    complement: 105,
+    analogous: 151,
+    saturation: 88,
+    xlight: 91,
     lighter: 84,
-    analhsl: 'hsl(258, 87%, 64%)',
-    analhsldarker: 'hsl(258, 87%, 48%)',
-    analhsltext: 'hsl(258, 87%, 0%)',
-    comphsl: 'hsl(212, 87%, 64%)',
-    comphsldarker: 'hsl(212, 87%, 48%)',
-    comphsltext: 'hsl(212, 87%, 0%)',
-    huehsl: 'hsl(33, 87%, 64%)',
-    huehsllighter: 'hsl(33, 87%, 84%)',
-    huehslactive: 'hsl(33, 64%, 92%)',
-    huehslhover: 'hsl(33, 64%, 84%)',
-    huehslmuted: 'hsl(33, 64%, 84%)',
-    darkhuehsl: 'hsl(33, 87%, 15%)',
-    darkhuehsldarker: 'hsl(33, 87%, 0%)',
-    darkhuehslactive: 'hsl(33, 64%, 36%)',
-    darkhuehslhover: 'hsl(33, 64%, 28%)',
-    darkhuehslmuted: 'hsl(33, 64%, 0%)'
+    lightness: 66,
+    midrange: 49,
+    lowmid: 35,
+    darkness: 5,
+    darker: 16,
+    huehsl: 'hsl(285, 88%, 66%)',
+    huehsllighter: 'hsl(285, 88%, 84%)',
+    huehslxlight: 'hsl(285, 88%, 91%)',
+    darkhuehsl: 'hsl(285, 88%, 5%)',
+    darkhuehsldarker: 'hsl(285, 88%, 16%)',
+    darkhuehsllowmid: 'hsl(285, 88%, 35%)',
+    comphsl: 'hsl(105, 88%, 66%)',
+    comphslmid: 'hsl(105, 88%, 49%)',
+    comphsldark: 'hsl(105, 88%, 5%)',
+    comphsldarker: 'hsl(105, 88%, 16%)',
+    analhsl: 'hsl(151, 88%, 66%)',
+    analhslmid: 'hsl(151, 88%, 49%)',
+    analhsldark: 'hsl(151, 88%, 5%)',
+    analhsldarker: 'hsl(151, 88%, 16%)'
 }
 ```
 

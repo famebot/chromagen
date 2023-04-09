@@ -27,42 +27,56 @@ export default () => {
 			analogous = shift > 359 ? shift - 359 : shift;
 	}
 
-	// Seed random saturtion and lightness within acceptable parameters for light and dark text.
-	const saturation = getRandomIntInclusive(80, 100); // 80,
+	// Seed random saturation and lightness within acceptable parameters for light and dark text.
+	const saturation = getRandomIntInclusive(80, 100);
 	// very light or white text
-	const lightness = getRandomIntInclusive(64, 80); // 80,
+	const lightness = getRandomIntInclusive(64, 80);
 	// very dark or black text
 	const darkness = getRandomIntInclusive(0, 24);
-
+	
 	// typically a more extreme darkness/lightness unless the value is already
 	// extreme then a moderate value to contrast well with the extreme value
 	let darker = darkness < 8 ? 16 : 0;
 	let lighter = lightness > 76 ? 68 : 84;
 
+	// Create other mixing values
+
+	// dark highlight
+	const lowmid = getRandomIntInclusive(28, 36);
+	// mid value used for lightness and saturation
+	const midrange = getRandomIntInclusive(48, 64);
+	// highlight
+	const xlight = getRandomIntInclusive(84, 92);
+
 	return {
+		// raw mixing values
 		hue: hue,
 		complement: complement,
 		analogous: analogous,
 		saturation: saturation,
+		xlight: xlight,
+		lighter: lighter,
 		lightness: lightness,
+		midrange: midrange,
+		lowmid: lowmid,
 		darkness: darkness,
 		darker: darker,
-		lighter: lighter,
-		analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
-		analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
-		analhsltext: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
-		comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
-		comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
-		comphsltext: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+		// primary hue: light and dark
 		huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
 		huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
-		huehslactive: `hsl(${hue}, 64%, 92%)`,
-		huehslhover: `hsl(${hue}, 64%, 84%)`,
-		huehslmuted: `hsl(${hue}, 64%, ${lighter}%)`,
+		huehslxlight: `hsl(${hue}, ${saturation}%, ${xlight}%)`,
 		darkhuehsl: `hsl(${hue}, ${saturation}%, ${darkness}%)`,
 		darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
-		darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
-		darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-		darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`,
+		darkhuehsllowmid: `hsl(${hue}, ${saturation}%, ${lowmid}%)`,
+		// complement
+		comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
+		comphslmid: `hsl(${complement}, ${saturation}%, ${midrange}%)`,
+		comphsldark: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
+		comphsldarker: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+		// analogous
+		analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
+		analhslmid: `hsl(${analogous}, ${saturation}%, ${midrange}%)`,
+		analhsldark: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
+		analhsldarker: `hsl(${analogous}, ${saturation}%, ${darker}%)`
 	};
 };
