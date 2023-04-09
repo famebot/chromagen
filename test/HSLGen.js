@@ -1,7 +1,7 @@
 import hslGen from '../src/index.js';
 import assert from 'assert';
 
-const propCount = 24;
+const propCount = 25;
 const colorScheme = hslGen();
 console.log(colorScheme);
 

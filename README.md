@@ -55,30 +55,35 @@ Any method above will return an object where the variable values below are rando
 
 ```js
 {
+    // raw mixing values
     hue: hue,
     complement: complement,
     analogous: analogous,
     saturation: saturation,
+    xlight: xlight,
+    lighter: lighter,
     lightness: lightness,
+    midrange: midrange,
+    lowmid: lowmid,
     darkness: darkness,
     darker: darker,
-    lighter: lighter,
-    analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
-    analhsldarker: `hsl(${analogous}, ${saturation}%, 48%)`,
-    analhsltext: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
-    comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
-    comphsldarker: `hsl(${complement}, ${saturation}%, 48%)`,
-    comphsltext: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+    // primary hue: light and dark
     huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
     huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
-    huehslactive: `hsl(${hue}, 64%, 92%)`,
-    huehslhover: `hsl(${hue}, 64%, 84%)`,
-    huehslmuted: `hsl(${hue}, 64%, ${lighter}%)`,
+    huehslxlight: `hsl(${hue}, ${saturation}%, ${xlight}%)`,
     darkhuehsl: `hsl(${hue}, ${saturation}%, ${darkness}%)`,
     darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
-    darkhuehslactive: `hsl(${hue}, 64%, 36%)`,
-    darkhuehslhover: `hsl(${hue}, 64%, 28%)`,
-    darkhuehslmuted: `hsl(${hue}, 64%, ${darker}%)`
+    darkhuehsllowmid: `hsl(${hue}, ${saturation}%, ${lowmid}%)`,
+    // complement
+    comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
+    comphslmid: `hsl(${complement}, ${saturation}%, ${midrange}%)`,
+    comphsldark: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
+    comphsldarker: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+    // analogous
+    analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
+    analhslmid: `hsl(${analogous}, ${saturation}%, ${midrange}%)`,
+    analhsldark: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
+    analhsldarker: `hsl(${analogous}, ${saturation}%, ${darker}%)`
 }
 ```
 
