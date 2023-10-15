@@ -1,3 +1,3 @@
-import hslGen from '@famebot/hsl-gen';
-const colorScheme = hslGen();
+import chromagen from '@famebot/chromagen';
+const colorScheme = chromagen();
 console.log(colorScheme);

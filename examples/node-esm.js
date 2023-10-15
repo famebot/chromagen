@@ -1,3 +1,3 @@
-import hslGen from '../dist/hsl-gen.module.js';
-const colorScheme = hslGen();
+import chromagen from '../dist/chromagen.module.js';
+const colorScheme = chromagen();
 console.log(colorScheme);
