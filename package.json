@@ -22,7 +22,10 @@
     },
     "author": "Ricky de Laveaga (https://rdela.com)",
     "license": "MIT",
-    "repository": "https://github.com/famebot/chromagen",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/famebot/chromagen.git"
+    },
     "bugs": {
         "url": "https://github.com/famebot/chromagen/issues"
     },
