@@ -17,7 +17,7 @@
         "dev": "microbundle watch",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
-        "release": "microbundle && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish",
+        "release": "microbundle && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish --access public",
         "test": "mocha"
     },
     "author": "Ricky de Laveaga (https://rdela.com)",
