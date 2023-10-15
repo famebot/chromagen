@@ -1,44 +1,49 @@
 {
-	"name": "@famebot/hsl-gen",
-	"version": "0.6.0",
-	"description": "Generates a color scheme with HSL values",
-	"type": "module",
-	"source": "./src/index.js",
-	"exports": {
-		"default": "./dist/hsl-gen.modern.js",
-		"require": "./dist/hsl-gen.cjs"
-	},
-	"main": "./dist/hsl-gen.cjs",
-	"module": "./dist/hsl-gen.module.js",
-	"umd:main": "./dist/hsl-gen.umd.js",
-	"unpkg": "./dist/hsl-gen.umd.js",
-	"scripts": {
-		"build": "microbundle",
-		"dev": "microbundle watch",
-		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-		"format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
-		"release": "microbundle && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish",
-		"test": "mocha"
-	},
-	"author": "Ricky de Laveaga (https://rdela.com)",
-	"license": "MIT",
-	"repository": "https://github.com/famebot/hsl-gen",
-	"bugs": {
-		"url": "https://github.com/famebot/hsl-gen/issues"
-	},
-	"homepage": "https://github.com/famebot/hsl-gen#readme",
-	"keywords": [
-		"hsl",
-		"gen",
-		"generate",
-		"color",
-		"scheme"
-	],
-	"devDependencies": {
-		"bumpp": "^9.0.0",
-		"conventional-changelog-cli": "^4.0.0",
-		"microbundle": "^0.15.1",
-		"mocha": "^10.2.0",
-		"prettier": "^3.0.3"
-	}
+    "name": "@famebot/chromagen",
+    "version": "0.7.0",
+    "description": "Color scheme generator",
+    "type": "module",
+    "source": "./src/index.js",
+    "exports": {
+        "default": "./dist/chromagen.modern.js",
+        "require": "./dist/chromagen.cjs"
+    },
+    "main": "./dist/chromagen.cjs",
+    "module": "./dist/chromagen.module.js",
+    "umd:main": "./dist/chromagen.umd.js",
+    "unpkg": "./dist/chromagen.umd.js",
+    "scripts": {
+        "build": "microbundle",
+        "dev": "microbundle watch",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
+        "release": "microbundle && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish",
+        "test": "mocha"
+    },
+    "author": "Ricky de Laveaga (https://rdela.com)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/famebot/chromagen.git"
+    },
+    "bugs": {
+        "url": "https://github.com/famebot/chromagen/issues"
+    },
+    "homepage": "https://github.com/famebot/chromagen#readme",
+    "keywords": [
+        "chroma",
+        "chromagen",
+        "hsl",
+        "gen",
+        "generate",
+        "color",
+        "scheme"
+    ],
+    "devDependencies": {
+        "bumpp": "^9.2.0",
+        "conventional-changelog-cli": "^4.0.0",
+        "microbundle": "^0.15.1",
+        "mocha": "^10.2.0",
+        "prettier": "^3.0.3"
+    }
 }

@@ -1,7 +1,7 @@
 {
-	"name": "hsl-gen-example",
+	"name": "chromagen-example",
 	"version": "1.0.0",
-	"description": "@famebot/hsl-gen example",
+	"description": "@famebot/chromagen example",
 	"scripts": {
 		"build": "echo \"noop: prebuilt\" && exit 0",
 		"cjs": "node node-cjs.cjs",
@@ -14,7 +14,7 @@
 	"author": "Ricky de Laveaga (https://rdela.com)",
 	"license": "ISC",
 	"dependencies": {
-		"@famebot/hsl-gen": "latest"
+		"@famebot/chromagen": "latest"
 	},
 	"type": "module"
 }

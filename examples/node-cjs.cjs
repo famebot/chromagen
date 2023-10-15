@@ -1,3 +1,3 @@
-const hslGen = require('../dist/hsl-gen.cjs');
-const colorScheme = hslGen();
+const chromagen = require('../dist/chromagen.cjs');
+const colorScheme = chromagen();
 console.log(colorScheme);

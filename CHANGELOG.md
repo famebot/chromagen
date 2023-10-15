@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/famebot/chromagen/compare/v0.6.0...v0.7.0) (2023-10-15)
+
+
+### Features
+
+* rename chromagen ([7efc2e3](https://github.com/famebot/chromagen/commit/7efc2e3f766d3f40def68e2d4bb34cf58a004f3f))
+
+
+
 # [0.6.0](https://github.com/famebot/hsl-gen/compare/v0.5.1...v0.6.0) (2023-04-09)
 
 
