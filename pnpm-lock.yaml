@@ -6,7 +6,7 @@ settings:
 
 devDependencies:
   bumpp:
-    specifier: ^9.0.0
+    specifier: ^9.2.0
     version: 9.2.0
   conventional-changelog-cli:
     specifier: ^4.0.0
