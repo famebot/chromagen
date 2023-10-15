@@ -1,6 +1,6 @@
 {
     "name": "@famebot/chromagen",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "description": "Color scheme generator",
     "type": "module",
     "source": "./src/index.js",
@@ -39,8 +39,8 @@
     "devDependencies": {
         "bumpp": "^9.2.0",
         "conventional-changelog-cli": "^4.0.0",
-		"microbundle": "^0.15.1",
-		"mocha": "^10.2.0",
-		"prettier": "^3.0.3"
+        "microbundle": "^0.15.1",
+        "mocha": "^10.2.0",
+        "prettier": "^3.0.3"
     }
 }
