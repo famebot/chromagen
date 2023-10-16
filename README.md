@@ -55,67 +55,38 @@ Any method above will return an object where the variable values below are rando
 
 ```js
 {
-    // raw mixing values
-    hue: hue,
-    complement: complement,
-    analogous: analogous,
-    saturation: saturation,
-    xlight: xlight,
-    lighter: lighter,
-    lightness: lightness,
-    midrange: midrange,
-    lowmid: lowmid,
-    darkness: darkness,
-    darker: darker,
-    // primary hue: light and dark
-    huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
-    huehsllighter: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
-    huehslxlight: `hsl(${hue}, ${saturation}%, ${xlight}%)`,
-    darkhuehsl: `hsl(${hue}, ${saturation}%, ${darkness}%)`,
-    darkhuehsldarker: `hsl(${hue}, ${saturation}%, ${darker}%)`,
-    darkhuehsllowmid: `hsl(${hue}, ${saturation}%, ${lowmid}%)`,
-    // complement
-    comphsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
-    comphslmid: `hsl(${complement}, ${saturation}%, ${midrange}%)`,
-    comphsldark: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
-    comphsldarker: `hsl(${complement}, ${saturation}%, ${darker}%)`,
-    // analogous
-    analhsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
-    analhslmid: `hsl(${analogous}, ${saturation}%, ${midrange}%)`,
-    analhsldark: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
-    analhsldarker: `hsl(${analogous}, ${saturation}%, ${darker}%)`
-}
-```
-
-We first seed the primary color: `hue` and `darkhue` for dark mode schemes. Next we set `complement` (secondary) and `analogous` (tertiary) values, then `saturation` and `lightness` and `darkness` within acceptable parameters for light and dark text, along with companion `lighter` and `darker` values. Finally we create `xlight`, `midrange`, and `lowmid` give us more mixing options. An example generated scheme looks like:
-
-```js
-{
-    hue: 285,
-    complement: 105,
-    analogous: 151,
-    saturation: 88,
-    xlight: 91,
-    lighter: 84,
-    lightness: 66,
-    midrange: 49,
-    lowmid: 35,
-    darkness: 5,
-    darker: 16,
-    huehsl: 'hsl(285, 88%, 66%)',
-    huehsllighter: 'hsl(285, 88%, 84%)',
-    huehslxlight: 'hsl(285, 88%, 91%)',
-    darkhuehsl: 'hsl(285, 88%, 5%)',
-    darkhuehsldarker: 'hsl(285, 88%, 16%)',
-    darkhuehsllowmid: 'hsl(285, 88%, 35%)',
-    comphsl: 'hsl(105, 88%, 66%)',
-    comphslmid: 'hsl(105, 88%, 49%)',
-    comphsldark: 'hsl(105, 88%, 5%)',
-    comphsldarker: 'hsl(105, 88%, 16%)',
-    analhsl: 'hsl(151, 88%, 66%)',
-    analhslmid: 'hsl(151, 88%, 49%)',
-    analhsldark: 'hsl(151, 88%, 5%)',
-    analhsldarker: 'hsl(151, 88%, 16%)'
+  hue: 128,
+  complement: 307,
+  analogous: 353,
+  saturation: 97,
+  xlight: 89,
+  lighter: 68,
+  lightness: 77,
+  midrange: 52,
+  lowmid: 28,
+  darkness: 2,
+  darker: 16,
+  huehsl: 'hsl(128, 97%, 77%)',
+  complementhsl: 'hsl(307, 97%, 77%)',
+  analogoushsl: 'hsl(353, 97%, 77%)',
+  huehslxlight: 'hsl(128, 97%, 89%)',
+  huehsllighter: 'hsl(128, 97%, 68%)',
+  huehslmid: 'hsl(128, 97%, 52%)',
+  huehsllowmid: 'hsl(128, 97%, 28%)',
+  huehsldark: 'hsl(128, 97%, 2%)',
+  huehsldarker: 'hsl(128, 97%, 16%)',
+  complementhslxlight: 'hsl(307, 97%, 89%)',
+  complementhsllighter: 'hsl(307, 97%, 68%)',
+  complementhslmid: 'hsl(307, 97%, 52%)',
+  complementhsllowmid: 'hsl(307, 97%, 28%)',
+  complementhsldark: 'hsl(307, 97%, 2%)',
+  complementhsldarker: 'hsl(307, 97%, 16%)',
+  analogoushslxlight: 'hsl(353, 97%, 89%)',
+  analogoushsllighter: 'hsl(353, 97%, 68%)',
+  analogoushslmid: 'hsl(353, 97%, 52%)',
+  analogoushsllowmid: 'hsl(353, 97%, 28%)',
+  analogoushsldark: 'hsl(353, 97%, 2%)',
+  analogoushsldarker: 'hsl(353, 97%, 16%)'
 }
 ```
 
