@@ -13,11 +13,11 @@
     "umd:main": "./dist/chromagen.umd.js",
     "unpkg": "./dist/chromagen.umd.js",
     "scripts": {
-        "build": "microbundle",
+        "build": "microbundle && cp dist/chromagen.umd.js examples/browser",
         "dev": "microbundle watch",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
-        "release": "microbundle && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish --access public",
+        "release": "npm run build && bumpp -x \"npm run changelog\" --all --commit --tag --push && npm publish --access public",
         "test": "mocha"
     },
     "author": "Ricky de Laveaga (https://rdela.com)",
@@ -32,7 +32,6 @@
     "homepage": "https://github.com/famebot/chromagen#readme",
     "keywords": [
         "chroma",
-        "chromagen",
         "hsl",
         "gen",
         "generate",

@@ -7,7 +7,7 @@
 		"cjs": "node node-cjs.cjs",
 		"enpm": "node node-esm-npm.js",
 		"reset": "rm -rf node_modules pnpm-lock.yaml package-lock.json yarn.lock",
-		"serve": "npx servor browser-umd --reload --browse",
+		"serve": "npx servor browser --reload --browse",
 		"start": "node node-esm.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
