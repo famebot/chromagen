@@ -1,3 +1,30 @@
+# [0.9.0](https://github.com/famebot/chromagen/compare/v0.8.0...v0.9.0) (2023-10-16)
+
+
+### BREAKING
+
+* add missing color values, rename some scheme values ([11de0e4](https://github.com/famebot/chromagen/commit/11de0e42897586315affeb68bbe0e33fa212f780))
+
+
+### BREAKING CHANGES
+
+* renamed color scheme values ⚠️
+
+- `darkhuehsl` => `huehsldark`
+- `darkhuehsldarker` => `huehsldarker`
+- `darkhuehsllowmid` => `huehsllowmid`
+
+New color scheme values 🆕
+
+- `complementhslxlight`
+- `complementhsllighter`
+- `complementhsllowmid`
+- `analogoushslxlight`
+- `analogoushsllighter`
+- `analogoushsllowmid`
+
+
+
 # [0.8.0](https://github.com/famebot/chromagen/compare/v0.7.0...v0.8.0) (2023-10-16)
 
 * update pkg json repository format, lockfile, publish settings, examples

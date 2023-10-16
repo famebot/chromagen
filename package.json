@@ -1,6 +1,6 @@
 {
     "name": "@famebot/chromagen",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "description": "Color scheme generator",
     "type": "module",
     "source": "./src/index.js",
