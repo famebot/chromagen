@@ -34,7 +34,7 @@ console.log(colorScheme);
 
 ### Browser use client-side
 
-For browser use, include `dist/chromagen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser-umd/index.html` demonstrates. View the latest version at <https://chromagen.netlify.app>
+For browser use, include `dist/chromagen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser-umd/index.html` demonstrates. View the latest version at <https://chromagen.io>
 
 Latest UMD bundle on unpkg:  
 <https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js>
