@@ -6,6 +6,7 @@
 		"build": "echo \"noop: prebuilt\" && exit 0",
 		"cjs": "node node-cjs.cjs",
 		"enpm": "node node-esm-npm.js",
+		"esm": "node node-esm.js",
 		"reset": "rm -rf node_modules pnpm-lock.yaml package-lock.json yarn.lock",
 		"serve": "npx servor browser --reload --browse",
 		"start": "node node-esm.js",

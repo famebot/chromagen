@@ -2,22 +2,30 @@
 	<title>Chromagen</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
 	<meta name="theme-color" content="navy">
+	<meta data-rh="true" property="og:image" content="https://chromagen.io/chromagen.jpg"/>
 	<style>
 		:root {
-			--background-color-dark: midnightblue;
-			--background-color-light: aqua;
-			--primary-lowmid: blue;
-			--primary-xlight: aliceblue;
-			--secondary: orange;
-			--secondarymid: darkorange;
-			--secondarydark: coral;
-			--secondarydarker: chocolate;
-			--tertiary: fuchsia;
-			--tertiarymid: darkorchid;
-			--tertiarydark: darkviolet;
-			--tertiarydarker: indigo;
-			--text-color-light: black;
-			--text-color-dark: lightcyan;
+			--huexlight: aliceblue;
+			--huelighter: lightcyan;
+			--hue: aqua;
+			--huemid: steelblue;
+			--huelowmid: blue;
+			--huedark: midnightblue;
+			--huedarker: black;
+			--complementxlight: bisque;
+			--complementlighter: peachpuff;
+			--complement: goldenrod;
+			--complementmid: orange;
+			--complementlowmid: darkorange;
+			--complementdark: coral;
+			--complementdarker: chocolate;
+			--analogousxlight: plum;
+			--analogouslighter: violet;
+			--analogous: fuchsia;
+			--analogousmid: darkorchid;
+			--analogouslowmid: darkorchid;
+			--analogousdark: darkviolet;
+			--analogousdarker: indigo;
 			--swatch-size: 8.375rem;
 		}
 		body {
@@ -25,47 +33,49 @@
 				https://css-tricks.com/the-notch-and-css/
 				https://css-tricks.com/meta-theme-color-and-trickery/
 			*/
-			background-color: var(--background-color-light);
-			background-image: linear-gradient(var(--background-color-light), 50%, var(--tertiary), 88%, var(--secondary));
-			color: var(--text-color-light);
+			background-color: var(--hue);
+			background-image: linear-gradient(var(--hue), 50%, var(--analogous), 88%, var(--complement));
+			color: var(--huedarker);
 			font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Oxygen, Ubuntu, Cantarell, 'Open Sans', Arial, sans-serif;
+			margin: 0 auto;
+			max-width: 1152px;
 			min-height: 100vh;
 			min-height: 100dvh;
 			text-align: center;
 		}
 		a[href] {
-			color: var(--text-color-light);
+			color: var(--huedarker);
 		}
 		a[href]:visited {
-			color: var(--secondarytext);
+			color: var(--complementtext);
 		}
 		a[href]:hover,
 		a[href]:active {
-			color: var(--tertiarytext);
+			color: var(--analogoustext);
 		}
 		button {
-			background-color: var(--tertiary);
-			background-image: linear-gradient(45deg, var(--secondary), var(--tertiary), var(--background-color-light));
-			border: .15625em solid var(--background-color-dark);
+			background-color: var(--analogous);
+			background-image: linear-gradient(45deg, var(--complement), var(--analogous), var(--hue));
+			border: .15625em solid var(--huedark);
 			border-radius: 99999px;
-			color: var(--text-color-light);
+			color: var(--huedarker);
 			font-size: 1.5em;
 			padding: 0.25em 0.5em;
 		}
 		button:focus,
 		button:hover {
-			background-color: var(--secondary);
-			background-image: linear-gradient(315deg, var(--background-color-light), var(--secondary), var(--tertiary));
-			border-color: var(--secondarydarker);
+			background-color: var(--complement);
+			background-image: linear-gradient(315deg, var(--hue), var(--complement), var(--analogous));
+			border-color: var(--complementdarker);
 		}
 		button:active {
-			background-color: var(--background-color-light);
-			border-color: var(--tertiarydarker);
+			background-color: var(--hue);
+			border-color: var(--analogousdarker);
 		}
 
 		.swatches {
 			list-style: none;
-			margin: 0;
+			margin: 0 0 var(--swatch-size);
 			width: 100%;
 			padding: 0;
 			display: flex;
@@ -90,29 +100,29 @@
 		}
 		@media (prefers-color-scheme: dark) {
 			body {
-				background-color: var(--background-color-dark);
-				background-image: linear-gradient(var(--background-color-dark), 50%, var(--tertiarydark), 88%, var(--secondarydark));
-				color: var(--text-color-dark);
+				background-color: var(--huedark);
+				background-image: linear-gradient(var(--huedark), 50%, var(--analogousdark), 88%, var(--complementdark));
+				color: var(--huelighter);
 			}
 			a[href] {
-				color: var(--secondary);
+				color: var(--complement);
 			}
 			a[href]:visited {
-				color: var(--text-color-dark);
+				color: var(--huelighter);
 			}
 			a[href]:hover,
 			a[href]:active {
-				color: var(--tertiary);
+				color: var(--analogous);
 			}
 			button {
-				border-color: var(--background-color-light);
+				border-color: var(--hue);
 			}
 			button:focus,
 			button:hover {
-				border-color: var(--secondary);
+				border-color: var(--complement);
 			}
 			button:active {
-				border-color: var(--tertiary);
+				border-color: var(--analogous);
 			}
 		}
 	</style>
@@ -134,130 +144,199 @@
 			<figure>
 				<span
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--primary-xlight);"
+					style="background-color: var(--huexlight);"
 				></span>
-				<figcaption>primary-xlight</figcaption>
+				<figcaption>hue xlight</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--text-color-dark);"
+					style="background-color: var(--huelighter);"
 				></span>
-				<figcaption>text-color-dark</figcaption>
+				<figcaption>hue lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--background-color-light);"
+					style="background-color: var(--hue);"
 				></span>
-				<figcaption>background-color-light</figcaption>
+				<figcaption>hue</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--primary-lowmid);"
+					style="background-color: var(--huemid);"
 				></span>
-				<figcaption>primary-lowmid</figcaption>
+				<figcaption>hue mid</figcaption>
+			</figure>
+		</li>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--huelowmid);"
+				></span>
+				<figcaption>hue low mid</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--background-color-dark);"
+					style="background-color: var(--huedark);"
 				></span>
-				<figcaption>background-color-dark</figcaption>
+				<figcaption>hue dark</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--text-color-light);"
+					style="background-color: var(--huedarker);"
 				></span>
-				<figcaption>text-color-light</figcaption>
+				<figcaption>hue darker</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--analogousxlight);"
+				></span>
+				<figcaption>analogous xlight</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--tertiary);"
+					style="background-color: var(--analogouslighter);"
 				></span>
-				<figcaption>tertiary</figcaption>
+				<figcaption>analogous lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--tertiarymid);"
+					style="background-color: var(--analogous);"
 				></span>
-				<figcaption>tertiarymid</figcaption>
+				<figcaption>analogous</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--tertiarydark);"
+					style="background-color: var(--analogousmid);"
 				></span>
-				<figcaption>tertiarydark</figcaption>
+				<figcaption>analogous mid</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--tertiarydarker);"
+					style="background-color: var(--analogouslowmid);"
 				></span>
-				<figcaption>tertiarydarker</figcaption>
+				<figcaption>analogous low mid</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--secondary);"
+					style="background-color: var(--analogousdark);"
 				></span>
-				<figcaption>secondary</figcaption>
+				<figcaption>analogous dark</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--secondarymid);"
+					style="background-color: var(--analogousdarker);"
 				></span>
-				<figcaption>secondarymid</figcaption>
+				<figcaption>analogous darker</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--complementxlight);"
+				></span>
+				<figcaption>complement xlight</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--secondarydark);"
+					style="background-color: var(--complementlighter);"
 				></span>
-				<figcaption>secondarydark</figcaption>
+				<figcaption>complement lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--secondarydarker);"
+					style="background-color: var(--complement);"
 				></span>
-				<figcaption>secondarydarker</figcaption>
+				<figcaption>complement</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--complementmid);"
+				></span>
+				<figcaption>complement mid</figcaption>
+			</figure>
+		</li>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--complementlowmid);"
+				></span>
+				<figcaption>complement low mid</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--complementdark);"
+				></span>
+				<figcaption>complement dark</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<span 
+					onClick="copyBackgroundColor(this)"
+					style="background-color: var(--complementdarker);"
+				></span>
+				<figcaption>complement darker</figcaption>
 			</figure>
 		</li>
 	</ul>
 	<script src="./chromagen.umd.js"></script>
+	<!-- 
+		or use unpkg: 
+		<script src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"></script>
+	 -->
 	<script>
 		const rainbow = () => {
 			const colorScheme = chromagen();
@@ -265,22 +344,29 @@
 			// https://davidwalsh.name/css-variables-javascript
 			const docstyle = document.documentElement.style;
 			// primary hue: light and dark
-			docstyle.setProperty('--background-color-light', colorScheme.huehsl);
-			docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
-			docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
-			docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
-			docstyle.setProperty('--primary-xlight', colorScheme.huehslxlight);
-			docstyle.setProperty('--primary-lowmid', colorScheme.darkhuehsllowmid);
+			docstyle.setProperty('--huexlight', colorScheme.huehslxlight);
+			docstyle.setProperty('--huelighter', colorScheme.huehsllighter); // was text-color-dark
+			docstyle.setProperty('--hue', colorScheme.huehsl); // was background-color-light
+			docstyle.setProperty('--huemid', colorScheme.huehslmid);
+			docstyle.setProperty('--huelowmid', colorScheme.huehsllowmid);
+			docstyle.setProperty('--huedark', colorScheme.huehsldark); // was background-color-dark
+			docstyle.setProperty('--huedarker', colorScheme.huehsldarker); // was text-color-light
 			// complement
-			docstyle.setProperty('--secondary', colorScheme.comphsl);
-			docstyle.setProperty('--secondarymid', colorScheme.comphslmid);
-			docstyle.setProperty('--secondarydark', colorScheme.comphsldark);
-			docstyle.setProperty('--secondarydarker', colorScheme.comphsldarker);
+			docstyle.setProperty('--complementxlight', colorScheme.complementhslxlight);
+			docstyle.setProperty('--complementlighter', colorScheme.complementhsllighter);
+			docstyle.setProperty('--complement', colorScheme.complementhsl);
+			docstyle.setProperty('--complementmid', colorScheme.complementhslmid);
+			docstyle.setProperty('--complementlowmid', colorScheme.complementhsllowmid);
+			docstyle.setProperty('--complementdark', colorScheme.complementhsldark);
+			docstyle.setProperty('--complementdarker', colorScheme.complementhsldarker);
 			// analogous
-			docstyle.setProperty('--tertiary', colorScheme.analhsl);
-			docstyle.setProperty('--tertiarymid', colorScheme.analhslmid);
-			docstyle.setProperty('--tertiarydark', colorScheme.analhsldark);
-			docstyle.setProperty('--tertiarydarker', colorScheme.analhsldarker);
+			docstyle.setProperty('--analogousxlight', colorScheme.analogoushslxlight);
+			docstyle.setProperty('--analogouslighter', colorScheme.analogoushsllighter);
+			docstyle.setProperty('--analogous', colorScheme.analogoushsl);
+			docstyle.setProperty('--analogousmid', colorScheme.analogoushslmid);
+			docstyle.setProperty('--analogouslowmid', colorScheme.analogoushsllowmid);
+			docstyle.setProperty('--analogousdark', colorScheme.analogoushsldark);
+			docstyle.setProperty('--analogousdarker', colorScheme.analogoushsldarker);
 			
 			function activateColorScheme() {
 				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
@@ -289,7 +375,7 @@
 				|| (colorSchemeQueryList.matches === true)) {
 					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
 				} else {
-					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.darkhuehsl);
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsldark);
 				}
 			}
 			const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
@@ -313,7 +399,7 @@
 				navigator.clipboard.writeText(textToCopy);
 
 				Swal.fire({
-					background: `var(--background-color-light)`,
+					background: `var(--hue)`,
 					icon: 'success',
 					showConfirmButton: false,
 					title: `Copied ${textToCopy}`,
@@ -327,7 +413,7 @@
 				// > The API is limited to secure contexts, which means that 
 				// > navigator.clipboard is not present for http:// websites.
 				Swal.fire({
-					background: `var(--background-color-light)`,
+					background: `var(--hue)`,
 					icon: 'error',
 					showConfirmButton: false,
 					title: `Not copied: Value missing or HTTPS required`,
