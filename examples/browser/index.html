@@ -28,6 +28,12 @@
 			--analogousdarker: indigo;
 			--swatch-size: 8.375rem;
 		}
+		body,
+		button,
+		.swatches figure span {
+			transition-duration: 0.375s;
+			transition-timing-function: ease-out;
+		}
 		body {
 			/*  
 				https://css-tricks.com/the-notch-and-css/
@@ -42,7 +48,7 @@
 			min-height: 100vh;
 			min-height: 100dvh;
 			text-align: center;
-			transition: background-color, background-image, color 0.5s ease-out;
+			transition-property: background-color, background-image, color;
 		}
 		a[href] {
 			color: var(--huedarker);
@@ -62,7 +68,7 @@
 			color: var(--huedarker);
 			font-size: 1.5em;
 			padding: 0.25em 0.5em;
-			transition: background-color, background-image, border-color, color 0.5s ease-out;
+			transition-property: background-color, background-image, border-color, color;
 		}
 		button:focus,
 		button:hover {
@@ -96,7 +102,7 @@
 			height: var(--swatch-size);
 			width: var(--swatch-size);
 			margin: 0 auto;
-			transition: background-color 0.5s ease-out;
+			transition-property: background-color;
 		}
 		.swatches figcaption {
 			margin-top: 0.5rem;
