@@ -80,7 +80,42 @@
 			background-color: var(--hue);
 			border-color: var(--analogousdarker);
 		}
-
+		header {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 3.5rem 0.75rem;
+		}
+		p {
+			margin: 0.5rem 0 0.75rem;
+		}
+		h1 {
+			margin-bottom: 0.75rem;
+			margin-top: 0.75rem;
+		}
+		header div {
+			align-self: end;
+		}
+		.mb0 {
+			margin-bottom: 0;
+		}
+		.tal {
+			text-align: left;
+		}
+		.tar {
+			text-align: right;
+		}
+		@media (max-width: 1152px) {
+			header {
+				display: block; 
+			}
+			.mb0 {
+				margin-bottom: 0.75rem;
+			}
+			.tal,
+			.tar {
+				text-align: center;
+			}
+		}
 		.swatches {
 			list-style: none;
 			margin: 0 0 var(--swatch-size);
@@ -134,20 +169,37 @@
 				border-color: var(--analogous);
 			}
 		}
+		div:where(.swal2-container) div:where(.swal2-popup) {
+			padding: 0 !important;
+		}
+		div:where(.swal2-container) h2:where(.swal2-title) {
+			background-color: rgba(255,255,255,0.375);
+			border-radius: 0 0 5px 5px;
+			color: var(--huedark) !important;
+			padding: .4em 1em .4em !important;
+		}
 	</style>
 </head><body>
-	<h1>Chromagen<span id="chromagen-hue"></span></h1>
-	<button onclick="rainbow()">Regenerate Colors</button>
-	<p>💡 Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a>.</p>
-	<p>
-		Toggle light/dark: 
-		<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
-		<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
-		<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
-	</p>
-	<p>UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on GitHub</a></p>
-	<h2>Colors</h2>
-	<p>Select a swatch to copy its CSS to your clipboard.</p>
+	<header>
+		<div>
+			<h1 class="tal">Chromagen</h1>
+			<button onclick="rainbow()">Regenerate Colors</button>
+		</div>
+		<div>
+			<p class="mb0">Select a swatch to copy its CSS to your clipboard.</p>
+			<p class="mb0"><span id="chromagen-hue"></span></p>
+		</div>
+		<div class="tar">
+			<p class="mb0">Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a></p>
+			<p class="mb0">
+				Toggle light/dark: 
+				<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
+				<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
+				<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
+			</p>
+			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on GitHub</a></p>
+		</div>
+	</header>
 	<ul class="swatches">
 		<li>
 			<figure>
@@ -393,7 +445,7 @@
 			lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 			activateColorScheme();
 			
-			document.getElementById('chromagen-hue').innerHTML = ` (Hue: ${colorScheme.hue})`;
+			document.getElementById('chromagen-hue').innerHTML = `Hues: Primary ${colorScheme.hue}, Complement ${colorScheme.complement}, Analogous ${colorScheme.analogous }`;
 		}
 		rainbow();
 	</script>
@@ -408,11 +460,11 @@
 				navigator.clipboard.writeText(textToCopy);
 
 				Swal.fire({
-					background: `var(--hue)`,
+					background: textToCopy,
 					icon: 'success',
 					showConfirmButton: false,
 					title: `Copied ${textToCopy}`,
-					timer: 1500,
+					timer: 150000,
 				});
 			} else {
 				// console.log(`value missing or clipboard unavailable`);
