@@ -49,7 +49,7 @@ Using the UMD bundle in the browser:
 </script>
 ```
 
-[![](./examples/browser/chromagen.jpg)](https://chromagen.io)
+[![](./examples/browser/chromagen.png)](https://chromagen.io)
 
 ### Step by step
 
