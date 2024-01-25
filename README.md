@@ -34,7 +34,7 @@ console.log(colorScheme);
 
 ### Browser use client-side
 
-For browser use, include `dist/chromagen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser-umd/index.html` demonstrates. View the latest version at <https://chromagen.io>
+For browser use, include `dist/chromagen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser/index.html` demonstrates. View the latest version at <https://chromagen.io>
 
 Latest UMD bundle on unpkg:  
 <https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js>
@@ -48,6 +48,8 @@ Using the UMD bundle in the browser:
     console.log(colorScheme);
 </script>
 ```
+
+[![](./examples/browser/chromagen.jpg)](https://chromagen.io)
 
 ### Step by step
 
