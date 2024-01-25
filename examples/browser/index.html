@@ -68,6 +68,7 @@
 			color: var(--huedarker);
 			font-size: 1.5em;
 			padding: 0.25em 0.5em;
+			margin: 0;
 			transition-property: background-color, background-image, border-color, color;
 		}
 		button:focus,
@@ -80,23 +81,26 @@
 			background-color: var(--hue);
 			border-color: var(--analogousdarker);
 		}
+		footer,
 		header {
+			align-items: center;
 			display: flex;
 			justify-content: space-between;
-			margin: 0 3.5rem 0.75rem;
+			margin: 0.75rem 3.5rem 0.75rem;
 		}
 		p {
 			margin: 0.5rem 0 0.75rem;
 		}
 		h1 {
 			margin-bottom: 0.75rem;
-			margin-top: 0.75rem;
-		}
-		header div {
-			align-self: end;
+			margin-top: 0.25rem;
+			line-height: 1.25;
 		}
 		.mb0 {
 			margin-bottom: 0;
+		}
+		.mt0 {
+			margin-top: 0;
 		}
 		.tal {
 			text-align: left;
@@ -105,8 +109,10 @@
 			text-align: right;
 		}
 		@media (max-width: 1152px) {
+			footer,
 			header {
-				display: block; 
+				display: block;
+				margin: 0 0 0.75rem;
 			}
 			.mb0 {
 				margin-bottom: 0.75rem;
@@ -118,7 +124,7 @@
 		}
 		.swatches {
 			list-style: none;
-			margin: 0 0 var(--swatch-size);
+			margin: 0 0 calc(var(--swatch-size) / 8);
 			width: 100%;
 			padding: 0;
 			display: flex;
@@ -181,24 +187,9 @@
 	</style>
 </head><body>
 	<header>
-		<div>
-			<h1 class="tal">Chromagen</h1>
-			<button onclick="rainbow()">Regenerate Colors</button>
-		</div>
-		<div>
-			<p class="mb0">Select a swatch to copy its CSS to your clipboard.</p>
-			<p class="mb0"><span id="chromagen-hue"></span></p>
-		</div>
-		<div class="tar">
-			<p class="mb0">Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark mode</a></p>
-			<p class="mb0">
-				Toggle light/dark: 
-				<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
-				<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
-				<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
-			</p>
-			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on GitHub</a></p>
-		</div>
+		<h1 class="mb0 mt0 tal">Chromagen</h1>
+		<p class="mb0 mt0 tar"><span id="chromagen-hue"></span></p>
+		<button onclick="rainbow()">Regenerate Colors</button>
 	</header>
 	<ul class="swatches">
 		<li>
@@ -393,6 +384,21 @@
 			</figure>
 		</li>
 	</ul>
+	<footer>
+		<div class="tal">
+			<p class="mb0">Select a swatch to copy its CSS to your&nbsp;clipboard.</p>
+			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on&nbsp;GitHub</a></p>
+		</div>
+		<div class="tar">
+			<p class="mb0 mt0">Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark&nbsp;mode.</a></p>
+			<p class="mb0">
+				Toggle light/dark: 
+				<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
+				<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
+				<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate-css-media-feature-prefers-color-scheme">Chrome</a>
+			</p>
+		</div>
+	</footer>
 	<script src="./chromagen.umd.js"></script>
 	<!-- 
 		or use unpkg: 
@@ -445,7 +451,7 @@
 			lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 			activateColorScheme();
 			
-			document.getElementById('chromagen-hue').innerHTML = `Hues: Primary ${colorScheme.hue}, Complement ${colorScheme.complement}, Analogous ${colorScheme.analogous }`;
+			document.getElementById('chromagen-hue').innerHTML = `Hues: Analogous&nbsp;${colorScheme.analogous }, Complement&nbsp;${colorScheme.complement}, Primary&nbsp;${colorScheme.hue}`;
 		}
 		rainbow();
 	</script>
@@ -464,7 +470,7 @@
 					icon: 'success',
 					showConfirmButton: false,
 					title: `Copied ${textToCopy}`,
-					timer: 150000,
+					timer: 1500,
 				});
 			} else {
 				// console.log(`value missing or clipboard unavailable`);
