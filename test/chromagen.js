@@ -41,16 +41,20 @@ describe('Chromagen', () => {
         );
     });
 
-    it(`should return a lightness value greater than 63 and less than 81`, () => {
+    it(`should return a xlight value greater than 83 and less than 93`, () => {
+        assert.equal(colorScheme.xlight > 83 && colorScheme.xlight < 93, true);
+    });
+
+    it(`should return a lighter value greater than 75 and less than 85`, () => {
         assert.equal(
-            colorScheme.lightness > 63 && colorScheme.lightness < 81,
+            colorScheme.lighter > 75 && colorScheme.lighter < 85,
             true
         );
     });
 
-    it(`should return a darkness value greater than -1 and less than 25`, () => {
+    it(`should return a lightness value greater than 63 and less than 73`, () => {
         assert.equal(
-            colorScheme.darkness > -1 && colorScheme.darkness < 25,
+            colorScheme.lightness > 63 && colorScheme.lightness < 73,
             true
         );
     });
@@ -62,30 +66,20 @@ describe('Chromagen', () => {
         );
     });
 
-    it(`should return a xlight value greater than 83 and less than 93`, () => {
-        assert.equal(
-            colorScheme.xlight > 83 && colorScheme.xlight < 93,
-            true
-        );
-    });
-
     it(`should return a lowmid value greater than 27 and less than 37`, () => {
-        assert.equal(
-            colorScheme.lowmid > 27 && colorScheme.lowmid < 37,
-            true
-        );
+        assert.equal(colorScheme.lowmid > 27 && colorScheme.lowmid < 37, true);
     });
-    
-    it(`should return a lighter value of 68 or 84`, () => {
+
+    it(`should return a darkness value greater than 15 and less than 25`, () => {
         assert.equal(
-            colorScheme.lighter === 68 || colorScheme.lighter === 84,
+            colorScheme.darkness > 15 && colorScheme.darkness < 25,
             true
         );
     });
 
-    it(`should return a darker value of 16 or 0`, () => {
+    it(`should return a darker value greater than -1 and less than 13`, () => {
         assert.equal(
-            colorScheme.darker === 0 || colorScheme.darker === 16,
+            colorScheme.darker > -1 && colorScheme.darker < 13, 
             true
         );
     });
