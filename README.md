@@ -1,5 +1,7 @@
 # Chromagen
 
+[![](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
+
 Chromagen generates HSL color schemes.
 
 - [Demo](https://chromagen.io)
@@ -49,11 +51,9 @@ Using the UMD bundle in the browser:
 </script>
 ```
 
-[![](./examples/browser/chromagen.png)](https://chromagen.io)
-
 ### Step by step
 
-Any method above will return an object where the variable values below are randomized within acceptable parameters:
+Any method above will return an object where the variable values below are randomized within acceptable parameters, for example:
 
 ```js
 {
@@ -67,28 +67,7 @@ Any method above will return an object where the variable values below are rando
   midrange: 64,
   lowmid: 32,
   darkness: 17,
-  darker: 9,
-  huehsl: 'hsl(1, 85%, 71%)',
-  complementhsl: 'hsl(180, 85%, 71%)',
-  analogoushsl: 'hsl(226, 85%, 71%)',
-  huexlighthsl: 'hsl(1, 85%, 85%)',
-  huelighterhsl: 'hsl(1, 85%, 82%)',
-  huemidhsl: 'hsl(1, 85%, 64%)',
-  huelowmidhsl: 'hsl(1, 85%, 32%)',
-  huedarkhsl: 'hsl(1, 85%, 17%)',
-  huedarkerhsl: 'hsl(1, 85%, 9%)',
-  complementxlighthsl: 'hsl(180, 85%, 85%)',
-  complementlighterhsl: 'hsl(180, 85%, 82%)',
-  complementmidhsl: 'hsl(180, 85%, 64%)',
-  complementlowmidhsl: 'hsl(180, 85%, 32%)',
-  complementdarkhsl: 'hsl(180, 85%, 17%)',
-  complementdarkerhsl: 'hsl(180, 85%, 9%)',
-  analogousxlighthsl: 'hsl(226, 85%, 85%)',
-  analogouslighterhsl: 'hsl(226, 85%, 82%)',
-  analogousmidhsl: 'hsl(226, 85%, 64%)',
-  analogouslowmidhsl: 'hsl(226, 85%, 32%)',
-  analogousdarkhsl: 'hsl(226, 85%, 17%)',
-  analogousdarkerhsl: 'hsl(226, 85%, 9%)'
+  darker: 9
 }
 ```
 

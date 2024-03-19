@@ -1,85 +1,84 @@
 import chromagen from '../src/index.js';
 import assert from 'assert';
 
-const propCount = 32;
+const propCount = 11;
 const colorScheme = chromagen();
 console.log(colorScheme);
 
+const satInt = parseInt(colorScheme.saturation.slice(0, -1));
+
 describe('Chromagen', () => {
-    it(`should return a color scheme object with ${propCount} properties`, () => {
-        assert.equal(
-            Object.keys(colorScheme).length, 
-            propCount
-        );
+    it(`${propCount} property color scheme object`, () => {
+        assert.equal(Object.keys(colorScheme).length, propCount);
     });
 
-    it(`should return a hue greater than zero and less than 360`, () => {
+    it(`hue greater than 0 and less than 360`, () => {
         assert.equal(
             colorScheme.hue > 0 && colorScheme.hue < 360,
             true
         );
     });
 
-    it(`should return a complement hue greater than zero and less than 360`, () => {
+    it(`complement hue greater than 0 and less than 360`, () => {
         assert.equal(
             colorScheme.complement > 0 && colorScheme.complement < 360,
             true
         );
     });
 
-    it(`should return a analogous hue greater than zero and less than 360`, () => {
+    it(`analogous hue greater than 0 and less than 360`, () => {
         assert.equal(
             colorScheme.analogous > 0 && colorScheme.analogous < 360,
             true
         );
     });
 
-    it(`should return a saturation value greater than 79 and less than 101`, () => {
+    it(`saturation greater than 79 and less than 101`, () => {
         assert.equal(
-            colorScheme.saturation > 79 && colorScheme.saturation < 101,
+            parseInt(colorScheme.saturation.slice(0, -1)) > 79 && parseInt(colorScheme.saturation.slice(0, -1)) < 101,
             true
         );
     });
 
-    it(`should return a xlight value greater than 83 and less than 93`, () => {
-        assert.equal(colorScheme.xlight > 83 && colorScheme.xlight < 93, true);
+    it(`xlight greater than 83 and less than 93`, () => {
+        assert.equal(parseInt(colorScheme.xlight.slice(0, -1)) > 83 && parseInt(colorScheme.xlight.slice(0, -1)) < 93, true);
     });
 
-    it(`should return a lighter value greater than 75 and less than 85`, () => {
+    it(`lighter greater than 75 and less than 85`, () => {
         assert.equal(
-            colorScheme.lighter > 75 && colorScheme.lighter < 85,
+            parseInt(colorScheme.lighter.slice(0, -1)) > 75 && parseInt(colorScheme.lighter.slice(0, -1)) < 85,
             true
         );
     });
 
-    it(`should return a lightness value greater than 63 and less than 73`, () => {
+    it(`lightness greater than 63 and less than 73`, () => {
         assert.equal(
-            colorScheme.lightness > 63 && colorScheme.lightness < 73,
+            parseInt(colorScheme.lightness.slice(0, -1)) > 63 && parseInt(colorScheme.lightness.slice(0, -1)) < 73,
             true
         );
     });
 
-    it(`should return a midrange value greater than 47 and less than 65`, () => {
+    it(`midrange greater than 47 and less than 65`, () => {
         assert.equal(
-            colorScheme.midrange > 47 && colorScheme.midrange < 65,
+            parseInt(colorScheme.midrange.slice(0, -1)) > 47 && parseInt(colorScheme.midrange.slice(0, -1)) < 65,
             true
         );
     });
 
-    it(`should return a lowmid value greater than 27 and less than 37`, () => {
-        assert.equal(colorScheme.lowmid > 27 && colorScheme.lowmid < 37, true);
+    it(`lowmid greater than 27 and less than 37`, () => {
+        assert.equal(parseInt(colorScheme.lowmid.slice(0, -1)) > 27 && parseInt(colorScheme.lowmid.slice(0, -1)) < 37, true);
     });
 
-    it(`should return a darkness value greater than 15 and less than 25`, () => {
+    it(`darkness greater than 15 and less than 25`, () => {
         assert.equal(
-            colorScheme.darkness > 15 && colorScheme.darkness < 25,
+            parseInt(colorScheme.darkness.slice(0, -1)) > 15 && parseInt(colorScheme.darkness.slice(0, -1)) < 25,
             true
         );
     });
 
-    it(`should return a darker value greater than -1 and less than 13`, () => {
+    it(`darker greater than -1 and less than 13`, () => {
         assert.equal(
-            colorScheme.darker > -1 && colorScheme.darker < 13, 
+            parseInt(colorScheme.darker.slice(0, -1)) > -1 && parseInt(colorScheme.darker.slice(0, -1)) < 13, 
             true
         );
     });

@@ -1,31 +1,45 @@
 <!doctype html><html><head><meta charset="utf-8">
 	<title>Chromagen</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
-	<meta name="theme-color" content="navy">
-	<meta data-rh="true" property="og:image" content="https://chromagen.io/chromagen.png"/>
+	<meta name="theme-color" content="hsl(172, 94%, 65%)">
+	<meta data-rh="true" property="og:image" content="https://o.famebot.com/file/famebot/chromagen.png"/>
 	<style>
 		:root {
-			--huexlight: aliceblue;
-			--huelighter: lightcyan;
-			--hue: aqua;
-			--huemid: steelblue;
-			--huelowmid: blue;
-			--huedark: midnightblue;
-			--huedarker: black;
-			--complementxlight: bisque;
-			--complementlighter: peachpuff;
-			--complement: goldenrod;
-			--complementmid: orange;
-			--complementlowmid: darkorange;
-			--complementdark: coral;
-			--complementdarker: chocolate;
-			--analogousxlight: plum;
-			--analogouslighter: violet;
-			--analogous: fuchsia;
-			--analogousmid: darkorchid;
-			--analogouslowmid: darkorchid;
-			--analogousdark: darkviolet;
-			--analogousdarker: indigo;
+			--hue: 172;
+			--complement: 351;
+			--analogous: 38;
+			--saturation: 94%;
+			--xlight: 92%;
+			--lighter: 83%;
+			--lightness: 65%;
+			--midrange: 54%;
+			--lowmid: 36%;
+			--darkness: 20%;
+			--darker: 9%;
+			/* primary hue variations by lightness */
+			--huexlight: hsl(var(--hue), var(--saturation), var(--xlight));
+			--huelighter: hsl(var(--hue), var(--saturation), var(--lighter));
+			--huehsl: hsl(var(--hue), var(--saturation), var(--lightness));
+			--huemid: hsl(var(--hue), var(--saturation), var(--midrange));
+			--huelowmid: hsl(var(--hue), var(--saturation), var(--lowmid));
+			--huedark: hsl(var(--hue), var(--saturation), var(--darkness));
+			--huedarker: hsl(var(--hue), var(--saturation), var(--darker));
+			/* complement variations by lightness */
+			--complementxlight: hsl(var(--complement), var(--saturation), var(--xlight));
+			--complementlighter: hsl(var(--complement), var(--saturation), var(--lighter));
+			--complementhsl: hsl(var(--complement), var(--saturation), var(--lightness));
+			--complementmid: hsl(var(--complement), var(--saturation), var(--midrange));
+			--complementlowmid: hsl(var(--complement), var(--saturation), var(--lowmid));
+			--complementdark: hsl(var(--complement), var(--saturation), var(--darkness));
+			--complementdarker: hsl(var(--complement), var(--saturation), var(--darker));
+			/* analogous variations by lightness */
+			--analogousxlight: hsl(var(--analogous), var(--saturation), var(--xlight));
+			--analogouslighter: hsl(var(--analogous), var(--saturation), var(--lighter));
+			--analogoushsl: hsl(var(--analogous), var(--saturation), var(--lightness));
+			--analogousmid: hsl(var(--analogous), var(--saturation), var(--midrange));
+			--analogouslowmid: hsl(var(--analogous), var(--saturation), var(--lowmid));
+			--analogousdark: hsl(var(--analogous), var(--saturation), var(--darkness));
+			--analogousdarker: hsl(var(--analogous), var(--saturation), var(--darker));
 			--swatch-size: 8.375rem;
 		}
 		body,
@@ -34,15 +48,22 @@
 			transition-duration: 0.375s;
 			transition-timing-function: ease-out;
 		}
+		body,
+		footer,
+		header {
+			display: flex;
+		}
 		body {
 			/*  
 				https://css-tricks.com/the-notch-and-css/
 				https://css-tricks.com/meta-theme-color-and-trickery/
 			*/
-			background-color: var(--hue);
-			background-image: linear-gradient(var(--hue), 50%, var(--analogous), 88%, var(--complement));
+			background-color: var(--huehsl);
+			background-image: linear-gradient(var(--huehsl), 50%, var(--analogoushsl), 88%, var(--complementhsl));
 			color: var(--huedarker);
+			flex-direction: column;
 			font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Oxygen, Ubuntu, Cantarell, 'Open Sans', Arial, sans-serif;
+			justify-content: space-between;
 			margin: 0 auto;
 			max-width: 1152px;
 			min-height: 100vh;
@@ -50,19 +71,31 @@
 			text-align: center;
 			transition-property: background-color, background-image, color;
 		}
+		footer,
+		header {
+			align-items: center;
+			justify-content: space-between;
+			margin: 0.75rem 3.5rem 0.75rem;
+		}
+		/* footer {
+			margin-block-end: 0;
+		}
+		header {
+			margin-block-start: 0;
+		} */
 		a[href] {
 			color: var(--huedarker);
 		}
 		a[href]:visited {
-			color: var(--complementtext);
+			color: var(--complementdarker);
 		}
 		a[href]:hover,
 		a[href]:active {
-			color: var(--analogoustext);
+			color: var(--analogousdarker);
 		}
 		button {
-			background-color: var(--analogous);
-			background-image: linear-gradient(45deg, var(--complement), var(--analogous), var(--hue));
+			background-color: var(--analogoushsl);
+			background-image: linear-gradient(45deg, var(--complementhsl), var(--analogoushsl), var(--huehsl));
 			border: .15625em solid var(--huedark);
 			border-radius: 99999px;
 			color: var(--huedarker);
@@ -73,20 +106,13 @@
 		}
 		button:focus,
 		button:hover {
-			background-color: var(--complement);
-			background-image: linear-gradient(315deg, var(--hue), var(--complement), var(--analogous));
+			background-color: var(--complementhsl);
+			background-image: linear-gradient(315deg, var(--huehsl), var(--complementhsl), var(--analogoushsl));
 			border-color: var(--complementdarker);
 		}
 		button:active {
-			background-color: var(--hue);
+			background-color: var(--huehsl);
 			border-color: var(--analogousdarker);
-		}
-		footer,
-		header {
-			align-items: center;
-			display: flex;
-			justify-content: space-between;
-			margin: 0.75rem 3.5rem 0.75rem;
 		}
 		p {
 			margin: 0.5rem 0 0.75rem;
@@ -108,23 +134,9 @@
 		.tar {
 			text-align: right;
 		}
-		@media (max-width: 1152px) {
-			footer,
-			header {
-				display: block;
-				margin: 0 0 0.75rem;
-			}
-			.mb0 {
-				margin-bottom: 0.75rem;
-			}
-			.tal,
-			.tar {
-				text-align: center;
-			}
-		}
 		.swatches {
 			list-style: none;
-			margin: 0 0 calc(var(--swatch-size) / 8);
+			margin: 0 auto calc(var(--swatch-size) / 8);
 			width: 100%;
 			padding: 0;
 			display: flex;
@@ -155,6 +167,32 @@
 		.swatches figcaption {
 			margin-top: 0.5rem;
 		}
+		@media (max-width: 1152px) {
+			footer,
+			header {
+				display: block;
+				margin: 0 0.75rem 0.75rem;
+			}
+			.mb0 {
+				margin-bottom: 0.75rem;
+			}
+			.tal,
+			.tar {
+				text-align: center;
+			}
+			.swatches {
+				flex-direction: column;
+				height: calc(var(--swatch-size) * 8);
+				max-width: calc(var(--swatch-size) * 3.25);
+			}
+		}
+		@media (max-width: 448px) {
+			.swatches {
+				flex-direction: row;
+				height: auto;
+				max-width: 100%;
+			}
+		}
 		@media (prefers-color-scheme: dark) {
 			body {
 				background-color: var(--huedark);
@@ -162,24 +200,24 @@
 				color: var(--huelighter);
 			}
 			a[href] {
-				color: var(--complement);
+				color: var(--complementhsl);
 			}
 			a[href]:visited {
 				color: var(--huelighter);
 			}
 			a[href]:hover,
 			a[href]:active {
-				color: var(--analogous);
+				color: var(--analogoushsl);
 			}
 			button {
-				border-color: var(--hue);
+				border-color: var(--huehsl);
 			}
 			button:focus,
 			button:hover {
-				border-color: var(--complement);
+				border-color: var(--complementhsl);
 			}
 			button:active {
-				border-color: var(--analogous);
+				border-color: var(--analogoushsl);
 			}
 		}
 		div:where(.swal2-container) div:where(.swal2-popup) {
@@ -204,8 +242,8 @@
 				<span
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huexlight);"
+					title="hue xlight"
 				></span>
-				<figcaption>hue xlight</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -213,17 +251,17 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huelighter);"
+					title="hue lighter"
 				></span>
-				<figcaption>hue lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--hue);"
+					style="background-color: var(--huehsl);"
+					title="hue"
 				></span>
-				<figcaption>hue</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -231,8 +269,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huemid);"
+					title="hue mid"
 				></span>
-				<figcaption>hue mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -240,8 +278,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huelowmid);"
+					title="hue low mid"
 				></span>
-				<figcaption>hue low mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -249,8 +287,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huedark);"
+					title="hue dark"
 				></span>
-				<figcaption>hue dark</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -258,8 +296,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--huedarker);"
+					title="hue darker"
 				></span>
-				<figcaption>hue darker</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -267,8 +305,8 @@
 				<span
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogousxlight);"
+					title="analogous xlight"
 				></span>
-				<figcaption>analogous xlight</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -276,17 +314,17 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogouslighter);"
+					title="analogous lighter"
 				></span>
-				<figcaption>analogous lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogous);"
+					style="background-color: var(--analogoushsl);"
+					title="analogous"
 				></span>
-				<figcaption>analogous</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -294,8 +332,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogousmid);"
+					title="analogous mid"
 				></span>
-				<figcaption>analogous mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -303,8 +341,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogouslowmid);"
+					title="analogous low mid"
 				></span>
-				<figcaption>analogous low mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -312,8 +350,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogousdark);"
+					title="analogous dark"
 				></span>
-				<figcaption>analogous dark</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -321,8 +359,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--analogousdarker);"
+					title="analogous darker"
 				></span>
-				<figcaption>analogous darker</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -330,8 +368,8 @@
 				<span
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementxlight);"
+					title="complement xlight"
 				></span>
-				<figcaption>complement xlight</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -339,17 +377,17 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementlighter);"
+					title="complement lighter"
 				></span>
-				<figcaption>complement lighter</figcaption>
 			</figure>
 		</li>
 		<li>
 			<figure>
 				<span 
 					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complement);"
+					style="background-color: var(--complementhsl);"
+					title="complement"
 				></span>
-				<figcaption>complement</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -357,8 +395,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementmid);"
+					title="complement mid"
 				></span>
-				<figcaption>complement mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -366,8 +404,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementlowmid);"
+					title="complement low mid"
 				></span>
-				<figcaption>complement low mid</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -375,8 +413,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementdark);"
+					title="complement dark"
 				></span>
-				<figcaption>complement dark</figcaption>
 			</figure>
 		</li>
 		<li>
@@ -384,8 +422,8 @@
 				<span 
 					onClick="copyBackgroundColor(this)"
 					style="background-color: var(--complementdarker);"
+					title="complement darker"
 				></span>
-				<figcaption>complement darker</figcaption>
 			</figure>
 		</li>
 	</ul>
@@ -415,39 +453,27 @@
 			console.log(colorScheme);
 			// https://davidwalsh.name/css-variables-javascript
 			const docstyle = document.documentElement.style;
-			// primary hue: light and dark
-			docstyle.setProperty('--huexlight', colorScheme.huehslxlight);
-			docstyle.setProperty('--huelighter', colorScheme.huehsllighter); // was text-color-dark
-			docstyle.setProperty('--hue', colorScheme.huehsl); // was background-color-light
-			docstyle.setProperty('--huemid', colorScheme.huehslmid);
-			docstyle.setProperty('--huelowmid', colorScheme.huehsllowmid);
-			docstyle.setProperty('--huedark', colorScheme.huehsldark); // was background-color-dark
-			docstyle.setProperty('--huedarker', colorScheme.huehsldarker); // was text-color-light
-			// complement
-			docstyle.setProperty('--complementxlight', colorScheme.complementhslxlight);
-			docstyle.setProperty('--complementlighter', colorScheme.complementhsllighter);
-			docstyle.setProperty('--complement', colorScheme.complementhsl);
-			docstyle.setProperty('--complementmid', colorScheme.complementhslmid);
-			docstyle.setProperty('--complementlowmid', colorScheme.complementhsllowmid);
-			docstyle.setProperty('--complementdark', colorScheme.complementhsldark);
-			docstyle.setProperty('--complementdarker', colorScheme.complementhsldarker);
-			// analogous
-			docstyle.setProperty('--analogousxlight', colorScheme.analogoushslxlight);
-			docstyle.setProperty('--analogouslighter', colorScheme.analogoushsllighter);
-			docstyle.setProperty('--analogous', colorScheme.analogoushsl);
-			docstyle.setProperty('--analogousmid', colorScheme.analogoushslmid);
-			docstyle.setProperty('--analogouslowmid', colorScheme.analogoushsllowmid);
-			docstyle.setProperty('--analogousdark', colorScheme.analogoushsldark);
-			docstyle.setProperty('--analogousdarker', colorScheme.analogoushsldarker);
+			// mixing values
+			docstyle.setProperty('--hue', colorScheme.hue);
+			docstyle.setProperty('--complement', colorScheme.complement);
+			docstyle.setProperty('--analogous', colorScheme.analogous);
+			docstyle.setProperty('--saturation', colorScheme.saturation);
+			docstyle.setProperty('--xlight', colorScheme.xlight);
+			docstyle.setProperty('--lighter', colorScheme.lighter);
+			docstyle.setProperty('--lightness', colorScheme.lightness);
+			docstyle.setProperty('--midrange', colorScheme.midrange);
+			docstyle.setProperty('--lowmid', colorScheme.lowmid);
+			docstyle.setProperty('--darkness', colorScheme.darkness);
+			docstyle.setProperty('--darker', colorScheme.darker);
 			
 			function activateColorScheme() {
 				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
 				console.log(colorSchemeQueryList)
 				if ((colorSchemeQueryList.media === 'not all') 
 				|| (colorSchemeQueryList.matches === true)) {
-					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.lightness}%)`);
 				} else {
-					document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsldark);
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.darkness}%)`);
 				}
 			}
 			const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
