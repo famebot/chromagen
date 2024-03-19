@@ -39,10 +39,10 @@
         "scheme"
     ],
     "devDependencies": {
-        "bumpp": "^9.2.0",
-        "conventional-changelog-cli": "^4.0.0",
+        "bumpp": "^9.4.0",
+        "conventional-changelog-cli": "^4.1.0",
         "microbundle": "^0.15.1",
-        "mocha": "^10.2.0",
-        "prettier": "^3.0.3"
+        "mocha": "^10.3.0",
+        "prettier": "^3.2.5"
     }
 }
