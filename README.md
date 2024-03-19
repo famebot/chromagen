@@ -1,5 +1,7 @@
 # Chromagen
 
+[![](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
+
 Chromagen generates HSL color schemes.
 
 - [Demo](https://chromagen.io)
@@ -34,7 +36,7 @@ console.log(colorScheme);
 
 ### Browser use client-side
 
-For browser use, include `dist/chromagen.umd.js` or use [unpkg](https://unpkg.com), which `examples/browser/index.html` demonstrates. View the latest version at <https://chromagen.io>
+For browsers, use [unpkg](https://unpkg.com) or include `dist/chromagen.umd.js`, which `examples/browser/index.html` demonstrates. View the latest version at <https://chromagen.io>
 
 Latest UMD bundle on unpkg:  
 <https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js>
@@ -49,46 +51,23 @@ Using the UMD bundle in the browser:
 </script>
 ```
 
-[![](./examples/browser/chromagen.png)](https://chromagen.io)
-
 ### Step by step
 
-Any method above will return an object where the variable values below are randomized within acceptable parameters:
+Any method above will return an object where the variable values below are randomized within acceptable parameters, for example:
 
 ```js
 {
-  hue: 128,
-  complement: 307,
-  analogous: 353,
-  saturation: 97,
-  xlight: 89,
-  lighter: 68,
-  lightness: 77,
-  midrange: 52,
-  lowmid: 28,
-  darkness: 2,
-  darker: 16,
-  huehsl: 'hsl(128, 97%, 77%)',
-  complementhsl: 'hsl(307, 97%, 77%)',
-  analogoushsl: 'hsl(353, 97%, 77%)',
-  huehslxlight: 'hsl(128, 97%, 89%)',
-  huehsllighter: 'hsl(128, 97%, 68%)',
-  huehslmid: 'hsl(128, 97%, 52%)',
-  huehsllowmid: 'hsl(128, 97%, 28%)',
-  huehsldark: 'hsl(128, 97%, 2%)',
-  huehsldarker: 'hsl(128, 97%, 16%)',
-  complementhslxlight: 'hsl(307, 97%, 89%)',
-  complementhsllighter: 'hsl(307, 97%, 68%)',
-  complementhslmid: 'hsl(307, 97%, 52%)',
-  complementhsllowmid: 'hsl(307, 97%, 28%)',
-  complementhsldark: 'hsl(307, 97%, 2%)',
-  complementhsldarker: 'hsl(307, 97%, 16%)',
-  analogoushslxlight: 'hsl(353, 97%, 89%)',
-  analogoushsllighter: 'hsl(353, 97%, 68%)',
-  analogoushslmid: 'hsl(353, 97%, 52%)',
-  analogoushsllowmid: 'hsl(353, 97%, 28%)',
-  analogoushsldark: 'hsl(353, 97%, 2%)',
-  analogoushsldarker: 'hsl(353, 97%, 16%)'
+  hue: 1,
+  complement: 180,
+  analogous: 226,
+  saturation: 85,
+  xlight: 85,
+  lighter: 82,
+  lightness: 71,
+  midrange: 64,
+  lowmid: 32,
+  darkness: 17,
+  darker: 9
 }
 ```
 
