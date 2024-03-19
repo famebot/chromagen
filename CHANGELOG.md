@@ -1,3 +1,52 @@
+# [1.0.0](https://github.com/famebot/chromagen/compare/v0.9.0...v1.0.0) (2024-03-19)
+
+
+* feat!: simplify api, update example ([38c8403](https://github.com/famebot/chromagen/commit/38c840386ada2123066328525e6e69150be6aa93))
+
+
+### BREAKING CHANGES
+
+* - remove pre mixed values in returned object
+
+  ```diff
+  --- a/src/index.js
+  +++ b/src/index.js
+  -      // colors
+  -     huehsl: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
+  -     complementhsl: `hsl(${complement}, ${saturation}%, ${lightness}%)`,
+  -     analogoushsl: `hsl(${analogous}, ${saturation}%, ${lightness}%)`,
+  -     // primary hue variations by lightness
+  -     huexlighthsl: `hsl(${hue}, ${saturation}%, ${xlight}%)`,
+  -     huelighterhsl: `hsl(${hue}, ${saturation}%, ${lighter}%)`,
+  -     huemidhsl: `hsl(${hue}, ${saturation}%, ${midrange}%)`,
+  -     huelowmidhsl: `hsl(${hue}, ${saturation}%, ${lowmid}%)`,
+  -     huedarkhsl: `hsl(${hue}, ${saturation}%, ${darkness}%)`,
+  -     huedarkerhsl: `hsl(${hue}, ${saturation}%, ${darker}%)`,
+  -     // complement variations by lightness
+  -     complementxlighthsl: `hsl(${complement}, ${saturation}%, ${xlight}%)`,
+  -     complementlighterhsl: `hsl(${complement}, ${saturation}%, ${lighter}%)`,
+  -     complementmidhsl: `hsl(${complement}, ${saturation}%, ${midrange}%)`,
+  -     complementlowmidhsl: `hsl(${complement}, ${saturation}%, ${lowmid}%)`,
+  -     complementdarkhsl: `hsl(${complement}, ${saturation}%, ${darkness}%)`,
+  -     complementdarkerhsl: `hsl(${complement}, ${saturation}%, ${darker}%)`,
+  -     // analogous variations by lightness
+  -     analogousxlighthsl: `hsl(${analogous}, ${saturation}%, ${xlight}%)`,
+  -     analogouslighterhsl: `hsl(${analogous}, ${saturation}%, ${lighter}%)`,
+  -     analogousmidhsl: `hsl(${analogous}, ${saturation}%, ${midrange}%)`,
+  -     analogouslowmidhsl: `hsl(${analogous}, ${saturation}%, ${lowmid}%)`,
+  -     analogousdarkhsl: `hsl(${analogous}, ${saturation}%, ${darkness}%)`,
+  -     analogousdarkerhsl: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
+  ```
+
+EXAMPLE + README CHANGES:
+
+- only mix w css vars, vastly reducing api churn
+- account for breaking api changes: see /examples/browser/index.html
+- example interface overhaul/redesign, thanks @laramiedennis
+- external img: https://o.famebot.com/file/famebot/chromagen.png
+
+
+
 # [0.9.0](https://github.com/famebot/chromagen/compare/v0.8.0...v0.9.0) (2023-10-16)
 
 
