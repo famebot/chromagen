@@ -9,6 +9,8 @@
 
 * feat!: simplify api, update example ([38c8403](https://github.com/famebot/chromagen/commit/38c840386ada2123066328525e6e69150be6aa93))
 
+* feat!: make sure lighter/darker are more extreme than lightness/darkness ([dfd77fe](https://github.com/famebot/chromagen/pull/18/commits/dfd77feefd89ce9c68e42553d5d66f6d96525ef8))
+
 
 ### BREAKING CHANGES
 
