@@ -53,25 +53,25 @@ Using the UMD bundle in the browser:
 
 ### Step by step
 
-Any method above will return an object where the variable values below are randomized within acceptable parameters, for example:
+Any method above will return an object where the variable values below are randomized within acceptable parameters, for example (NOTE: since [v1](https://github.com/famebot/chromagen/releases/tag/v1.0.0), Chromagen now returns non-color mixing values with percent included):
 
 ```js
 {
-  hue: 1,
-  complement: 180,
-  analogous: 226,
-  saturation: 85,
-  xlight: 85,
-  lighter: 82,
-  lightness: 71,
-  midrange: 64,
-  lowmid: 32,
-  darkness: 17,
-  darker: 9
+  hue: 172,
+  complement: 351,
+  analogous: 38,
+  saturation: '94%',
+  xlight: '92%',
+  lighter: '83%',
+  lightness: '65%',
+  midrange: '54%',
+  lowmid: '36%',
+  darkness: '20%',
+  darker: '9%'
 }
 ```
 
-Check `src/index.js` for the nitty gritty.
+Check [`src/index.js`](./src/index.js) for the nitty gritty, or the [changelog](./CHANGELOG.md) for the latest.
 
 ## License
 
