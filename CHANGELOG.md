@@ -1,6 +1,8 @@
 ## [1.0.1](https://github.com/famebot/chromagen/compare/v1.0.0...v1.0.1) (2024-03-21)
 
-
+* chore(docs): update readme and changelog ([35c8233](https://github.com/famebot/chromagen/commit/35c8233fdd7f6cefe93ba96345c66cb25530a55b))
+  
+  indicate percent now included in non-color mixing values since v1
 
 # [1.0.0](https://github.com/famebot/chromagen/compare/v0.9.0...v1.0.0) (2024-03-19)
 
