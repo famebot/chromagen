@@ -6,7 +6,7 @@
 
 ### BREAKING CHANGES
 
-* - remove pre mixed values in returned object
+* remove pre-mixed values in returned object
 
   ```diff
   --- a/src/index.js
@@ -38,11 +38,42 @@
   -     analogousdarkerhsl: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
   ```
 
+* non-color mixing values now returned with percent included
+	
+  ```diff
+  --- a/src/index.js
+  +++ b/src/index.js
+        Seed random saturation and lightness values within acceptable parameters
+  -     const saturation = getRandomIntInclusive(80, 100);
+  +     const saturation = `${getRandomIntInclusive(80, 100)}%`;
+        // highlight
+  -     const xlight = getRandomIntInclusive(84, 92);
+  +     const xlight = `${getRandomIntInclusive(84, 92)}%`;
+        // more extreme lightness
+  -     const lighter = getRandomIntInclusive(76, 84);
+  +     const lighter = `${getRandomIntInclusive(76, 84)}%`;
+        // very light or white text
+  -     const lightness = getRandomIntInclusive(64, 72);
+  +     const lightness = `${getRandomIntInclusive(64, 72)}%`;
+        // mid value used for lightness and saturation
+  -     const midrange = getRandomIntInclusive(48, 64);
+  +     const midrange = `${getRandomIntInclusive(48, 64)}%`;
+        // dark highlight
+  -     const lowmid = getRandomIntInclusive(28, 36);
+  +     const lowmid = `${getRandomIntInclusive(28, 36)}%`;
+        // very dark or black text
+  -     const darkness = getRandomIntInclusive(16, 24);
+  +     const darkness = `${getRandomIntInclusive(16, 24)}%`;
+        // more extreme darkness
+  -     const darker = getRandomIntInclusive(0, 12);
+  +     const darker = `${getRandomIntInclusive(0, 12)}%`;
+  ```
+
 EXAMPLE + README CHANGES:
 
 - only mix w css vars, vastly reducing api churn
 - account for breaking api changes: see /examples/browser/index.html
-- example interface overhaul/redesign, thanks @laramiedennis
+- example interface overhaul/redesign, thanks @laramiedennis 💖
 - external img: https://o.famebot.com/file/famebot/chromagen.png
 
 
