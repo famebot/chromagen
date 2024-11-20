@@ -1,3 +1,7 @@
+## [1.0.2](https://github.com/famebot/chromagen/compare/v1.0.1...v1.0.2) (2024-11-20)
+
+
+
 ## [1.0.1](https://github.com/famebot/chromagen/compare/v1.0.0...v1.0.1) (2024-03-21)
 
 * chore(docs): update readme and changelog ([35c8233](https://github.com/famebot/chromagen/commit/35c8233fdd7f6cefe93ba96345c66cb25530a55b))
