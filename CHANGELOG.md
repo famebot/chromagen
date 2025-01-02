@@ -1,24 +1,25 @@
 ## [1.0.2](https://github.com/famebot/chromagen/compare/v1.0.1...v1.0.2) (2024-11-20)
 
-
+- Various dependency, changelog, and documentation updates
 
 ## [1.0.1](https://github.com/famebot/chromagen/compare/v1.0.0...v1.0.1) (2024-03-21)
 
-* chore(docs): update readme and changelog ([35c8233](https://github.com/famebot/chromagen/commit/35c8233fdd7f6cefe93ba96345c66cb25530a55b))
-  
+- chore(docs): update readme and changelog
+  ([35c8233](https://github.com/famebot/chromagen/commit/35c8233fdd7f6cefe93ba96345c66cb25530a55b))
+
   indicate percent now included in non-color mixing values since v1
 
 # [1.0.0](https://github.com/famebot/chromagen/compare/v0.9.0...v1.0.0) (2024-03-19)
 
+- feat!: simplify api, update example
+  ([38c8403](https://github.com/famebot/chromagen/commit/38c840386ada2123066328525e6e69150be6aa93))
 
-* feat!: simplify api, update example ([38c8403](https://github.com/famebot/chromagen/commit/38c840386ada2123066328525e6e69150be6aa93))
-
-* feat!: make sure lighter/darker are more extreme than lightness/darkness ([dfd77fe](https://github.com/famebot/chromagen/pull/18/commits/dfd77feefd89ce9c68e42553d5d66f6d96525ef8))
-
+- feat!: make sure lighter/darker are more extreme than lightness/darkness
+  ([dfd77fe](https://github.com/famebot/chromagen/pull/18/commits/dfd77feefd89ce9c68e42553d5d66f6d96525ef8))
 
 ### BREAKING CHANGES
 
-* remove pre-mixed values in returned object
+- remove pre-mixed values in returned object
 
   ```diff
   --- a/src/index.js
@@ -50,8 +51,8 @@
   -     analogousdarkerhsl: `hsl(${analogous}, ${saturation}%, ${darker}%)`,
   ```
 
-* non-color mixing values now returned with percent included
-	
+- non-color mixing values now returned with percent included
+
   ```diff
   --- a/src/index.js
   +++ b/src/index.js
@@ -88,23 +89,20 @@ EXAMPLE + README CHANGES:
 - example interface overhaul/redesign, thanks @laramiedennis 💖
 - external img: https://o.famebot.com/file/famebot/chromagen.png
 
-
-
 # [0.9.0](https://github.com/famebot/chromagen/compare/v0.8.0...v0.9.0) (2023-10-16)
-
 
 ### BREAKING
 
-* add missing color values, rename some scheme values ([11de0e4](https://github.com/famebot/chromagen/commit/11de0e42897586315affeb68bbe0e33fa212f780))
-
+- add missing color values, rename some scheme values
+  ([11de0e4](https://github.com/famebot/chromagen/commit/11de0e42897586315affeb68bbe0e33fa212f780))
 
 ### BREAKING CHANGES
 
-* renamed color scheme values ⚠️
+- renamed color scheme values ⚠️
 
-- `darkhuehsl` => `huehsldark`
-- `darkhuehsldarker` => `huehsldarker`
-- `darkhuehsllowmid` => `huehsllowmid`
+* `darkhuehsl` => `huehsldark`
+* `darkhuehsldarker` => `huehsldarker`
+* `darkhuehsllowmid` => `huehsllowmid`
 
 New color scheme values 🆕
 
@@ -115,17 +113,16 @@ New color scheme values 🆕
 - `analogoushsllighter`
 - `analogoushsllowmid`
 
-
-
 # [0.8.0](https://github.com/famebot/chromagen/compare/v0.7.0...v0.8.0) (2023-10-16)
 
-* update pkg json repository format, lockfile, publish settings, examples
+- update pkg json repository format, lockfile, publish settings, examples
 
 # [0.7.0](https://github.com/famebot/chromagen/compare/v0.6.0...v0.7.0) (2023-10-15)
 
 ### Features
 
-* rename chromagen ([7efc2e3](https://github.com/famebot/chromagen/commit/7efc2e3f766d3f40def68e2d4bb34cf58a004f3f))
+- rename chromagen
+  ([7efc2e3](https://github.com/famebot/chromagen/commit/7efc2e3f766d3f40def68e2d4bb34cf58a004f3f))
 
 # [0.6.0](https://github.com/famebot/hsl-gen/compare/v0.5.1...v0.6.0) (2023-04-09)
 
@@ -135,12 +132,13 @@ New color scheme values 🆕
 
 ### Features
 
-* xlight, midrange, lowmid, swatch palette ([5b628a8](https://github.com/famebot/hsl-gen/commit/5b628a87ca4ee25cdaae49ee76592ce7ea6c6f3e))
+- xlight, midrange, lowmid, swatch palette
+  ([5b628a8](https://github.com/famebot/hsl-gen/commit/5b628a87ca4ee25cdaae49ee76592ce7ea6c6f3e))
 
 ### BREAKING CHANGES
 
-* Deprecated huehslactive, huehslhover, huehslmuted,
-darkhuehslactive, darkhuehslhover, and darkhuehslmuted
+- Deprecated huehslactive, huehslhover, huehslmuted, darkhuehslactive,
+  darkhuehslhover, and darkhuehslmuted
 
 🎲 All mixing values now randomly generated 👾
 
@@ -188,61 +186,71 @@ Replaces `darkhuehslactive` and `darkhuehslhover`
 
 ### Bug Fixes
 
-* use darker instead of darkness for (anal|comp)hsltext ([19ea482](https://github.com/famebot/hsl-gen/commit/19ea482bc5884b376d160d5766d54bc473c50f69))
+- use darker instead of darkness for (anal|comp)hsltext
+  ([19ea482](https://github.com/famebot/hsl-gen/commit/19ea482bc5884b376d160d5766d54bc473c50f69))
 
 ## [0.3.5](https://github.com/famebot/hsl-gen/compare/v0.3.4...v0.3.5) (2023-04-06)
 
 ### Features
 
-* add analhsltext and comphsltext using darkness ([9177436](https://github.com/famebot/hsl-gen/commit/91774367d894ddb0303ceecfb95be77c12237017))
+- add analhsltext and comphsltext using darkness
+  ([9177436](https://github.com/famebot/hsl-gen/commit/91774367d894ddb0303ceecfb95be77c12237017))
 
 ## [0.3.4](https://github.com/famebot/hsl-gen/compare/v0.3.3...v0.3.4) (2023-04-05)
 
 ### Features
 
-* use fn instead of reloading page in UMD example ([e9c423c](https://github.com/famebot/hsl-gen/commit/e9c423c247c618f98543432847aad903a7564645))
+- use fn instead of reloading page in UMD example
+  ([e9c423c](https://github.com/famebot/hsl-gen/commit/e9c423c247c618f98543432847aad903a7564645))
 
 ## [0.3.3](https://github.com/famebot/hsl-gen/compare/v0.3.2...v0.3.3) (2023-04-03)
 
 ### Bug Fixes
 
-* UMD color contrast ([112ede0](https://github.com/famebot/hsl-gen/commit/112ede0ff56e3feb66d407d978d61e1b02113241))
+- UMD color contrast
+  ([112ede0](https://github.com/famebot/hsl-gen/commit/112ede0ff56e3feb66d407d978d61e1b02113241))
 
 ## [0.3.2](https://github.com/famebot/hsl-gen/compare/v0.3.1...v0.3.2) (2023-04-03)
 
 ### Bug Fixes
 
-* use `latest` everywhere; UMD color contrast; devtools links ([30ce0fa](https://github.com/famebot/hsl-gen/commit/30ce0fa80bcfeacbecd841bebc13be49662f8a6f))
+- use `latest` everywhere; UMD color contrast; devtools links
+  ([30ce0fa](https://github.com/famebot/hsl-gen/commit/30ce0fa80bcfeacbecd841bebc13be49662f8a6f))
 
 ## [0.3.1](https://github.com/famebot/hsl-gen/compare/v0.3.0...v0.3.1) (2023-04-03)
 
 ### Features
 
-* use raw hue in UMD example ([2541ce1](https://github.com/famebot/hsl-gen/commit/2541ce1ef7b272e8579b559954846d848bef93a7))
+- use raw hue in UMD example
+  ([2541ce1](https://github.com/famebot/hsl-gen/commit/2541ce1ef7b272e8579b559954846d848bef93a7))
 
 # [0.3.0](https://github.com/famebot/hsl-gen/compare/v0.2.2...v0.3.0) (2023-04-03)
 
 ### Features
 
-* add raw values to returned object to expand customization possibilities ([c9b9b23](https://github.com/famebot/hsl-gen/commit/c9b9b2382db0b233e7ffb3e9e6f9f6f939bc512d))
+- add raw values to returned object to expand customization possibilities
+  ([c9b9b23](https://github.com/famebot/hsl-gen/commit/c9b9b2382db0b233e7ffb3e9e6f9f6f939bc512d))
 
 ## [0.2.2](https://github.com/famebot/hsl-gen/compare/v0.2.1...v0.2.2) (2023-04-01)
 
 ### Features
 
-* add noop build script for umd example hosting ([8c54b52](https://github.com/famebot/hsl-gen/commit/8c54b5272c2703c86f2c98ff6ea1e4d4cbee92fe))
+- add noop build script for umd example hosting
+  ([8c54b52](https://github.com/famebot/hsl-gen/commit/8c54b5272c2703c86f2c98ff6ea1e4d4cbee92fe))
 
 ## [0.2.1](https://github.com/famebot/hsl-gen/compare/v0.2.0...v0.2.1) (2023-03-24)
 
 ### Bug Fixes
 
-* standardize on `hslGen` not `HSLgen` for UMD compat ([b2b1f17](https://github.com/famebot/hsl-gen/commit/b2b1f17f5b51a5569013c2696300fb92ca5924cb))
+- standardize on `hslGen` not `HSLgen` for UMD compat
+  ([b2b1f17](https://github.com/famebot/hsl-gen/commit/b2b1f17f5b51a5569013c2696300fb92ca5924cb))
 
 # [0.2.0](https://github.com/famebot/hsl-gen/compare/v0.1.3...v0.2.0) (2023-03-24)
 
 ### Features
 
-* provide CLS and UMD bundles via Microbundle ([5a39ee6](https://github.com/famebot/hsl-gen/commit/5a39ee6c83c1c2d2d5944e14376adef7008eabca))
+- provide CLS and UMD bundles via Microbundle
+  ([5a39ee6](https://github.com/famebot/hsl-gen/commit/5a39ee6c83c1c2d2d5944e14376adef7008eabca))
 
 ## [0.1.3](https://github.com/famebot/hsl-gen/compare/v0.1.2...v0.1.3) (2023-03-17)
 
@@ -256,7 +264,8 @@ Replaces `darkhuehslactive` and `darkhuehslhover`
 
 ### Bug Fixes
 
-* correct devDeps ([e6dedf2](https://github.com/famebot/hsl-gen/commit/e6dedf24fa82f46624ac374f376d10ce03e54f2c))
+- correct devDeps
+  ([e6dedf2](https://github.com/famebot/hsl-gen/commit/e6dedf24fa82f46624ac374f376d10ce03e54f2c))
 
 ## [0.0.8](https://github.com/famebot/hsl-gen/compare/v0.0.7...v0.0.8) (2023-03-15)
 
@@ -264,4 +273,5 @@ Replaces `darkhuehslactive` and `darkhuehslhover`
 
 ### Features
 
-* init ([8aec25c](https://github.com/famebot/hsl-gen/commit/8aec25cb5335f3293346f29359826916eb61f2d6))
+- init
+  ([8aec25c](https://github.com/famebot/hsl-gen/commit/8aec25cb5335f3293346f29359826916eb61f2d6))
