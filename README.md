@@ -2,7 +2,7 @@
 
 Color scheme generator
 
-<a href="https://chromagen.io"><img loading="lazy" src="https://o.famebot.com/file/famebot/chromagen.png" alt="" style="aspect-ratio:40/21;max-width: 100%;"></a>
+[![](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
 
 [![npm Version](https://img.shields.io/npm/v/@famebot/chromagen.svg?style=for-the-badge)](https://www.npmjs.com/package/@famebot/chromagen)
 &nbsp;
