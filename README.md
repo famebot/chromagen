@@ -2,7 +2,7 @@
 
 Color scheme generator
 
-[![](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
+[![example scheme](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
 
 [![npm Version](https://img.shields.io/npm/v/@famebot/chromagen.svg?style=for-the-badge)](https://www.npmjs.com/package/@famebot/chromagen)
 &nbsp;
@@ -63,8 +63,10 @@ Using the UMD bundle in the browser:
 
 ### Step by step
 
-Chromagen returns an object with values for HSL color schemes randomized within
-acceptable parameters:
+Chromagen returns an 11 property HSL color scheme object with values randomized
+within acceptable parameters. Included are 7 shades of lightness, 1 saturation
+level, and 3 hues: the primary hue, its complement, and a hue analogous to the
+complement. The generated object for the example scheme in the image above was:
 
 ```js
 {
@@ -83,8 +85,7 @@ acceptable parameters:
 ```
 
 Since [v1](https://github.com/famebot/chromagen/releases/tag/v1.0.0), Chromagen
-returns mixing values that are not hues with the percent symbol already
-included.
+returns the percent symbol with all mixing values except hues.
 
 Check [`src/index.js`](./src/index.js) for the nitty gritty. We summarize
 breaking changes in the [changelog](./CHANGELOG.md) and the
