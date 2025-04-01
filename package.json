@@ -39,7 +39,7 @@
         "scheme"
     ],
     "devDependencies": {
-        "bumpp": "^9.4.0",
+        "bumpp": "^10.1.0",
         "conventional-changelog-cli": "^5.0.0",
         "microbundle": "^0.15.1",
         "mocha": "^11.0.1",
