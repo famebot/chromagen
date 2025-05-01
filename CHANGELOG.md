@@ -91,7 +91,6 @@ EXAMPLE + README CHANGES:
 - only mix w css vars, vastly reducing api churn
 - account for breaking api changes: see /examples/browser/index.html
 - example interface overhaul/redesign, thanks @laramiedennis 💖
-- external img: https://o.famebot.com/file/famebot/chromagen.png
 
 # [0.9.0](https://github.com/famebot/chromagen/compare/v0.8.0...v0.9.0) (2023-10-16)
 

@@ -2,8 +2,6 @@
 
 Color scheme generator
 
-[![example scheme](https://o.famebot.com/file/famebot/chromagen.png)](https://chromagen.io)
-
 [![npm Version](https://img.shields.io/npm/v/@famebot/chromagen.svg?style=for-the-badge)](https://www.npmjs.com/package/@famebot/chromagen)
 &nbsp;
 [![GitHub issues](https://img.shields.io/github/issues/famebot/chromagen.svg?style=for-the-badge)](https://github.com/famebot/chromagen/issues)
