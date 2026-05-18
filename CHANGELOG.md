@@ -1,3 +1,4 @@
+## [1.0.5](https://github.com/famebot/chromagen/compare/v1.0.4...v1.0.5) (2026-05-18)
 ## [1.0.4](https://github.com/famebot/chromagen/compare/v1.0.3...v1.0.4) (2025-05-01)
 
 
