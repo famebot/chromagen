@@ -1,2 +1,0 @@
-var a=function(a,r){return Math.floor(Math.random()*(r-a+1))+a},r=function(){var r,e=a(1,359),t=e>180?e-180:e+179;switch(e){case e<135:r=e+224;break;case e>224:r=e-223;break;default:var n=e+225;r=n>359?n-359:n}return{hue:e,complement:t,analogous:r,saturation:a(80,100)+"%",xlight:a(84,92)+"%",lighter:a(76,84)+"%",lightness:a(64,72)+"%",midrange:a(48,64)+"%",lowmid:a(28,36)+"%",darkness:a(16,24)+"%",darker:a(0,12)+"%"}};export{r as default};
-//# sourceMappingURL=chromagen.module.js.map

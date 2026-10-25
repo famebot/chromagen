@@ -1,2 +1,0 @@
-const a=(a,e)=>Math.floor(Math.random()*(e-a+1))+a;var e=()=>{const e=a(1,359);var r,t=e>180?e-180:e+179;switch(e){case e<135:r=e+224;break;case e>224:r=e-223;break;default:var s=e+225;r=s>359?s-359:s}return{hue:e,complement:t,analogous:r,saturation:`${a(80,100)}%`,xlight:`${a(84,92)}%`,lighter:`${a(76,84)}%`,lightness:`${a(64,72)}%`,midrange:`${a(48,64)}%`,lowmid:`${a(28,36)}%`,darkness:`${a(16,24)}%`,darker:`${a(0,12)}%`}};export{e as default};
-//# sourceMappingURL=chromagen.modern.js.map
