@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -86,12 +86,6 @@
 			margin: 0.75rem 3.5rem 0.75rem;
 		}
 
-		/* footer {
-			margin-block-end: 0;
-		}
-		header {
-			margin-block-start: 0;
-		} */
 		a[href] {
 			color: var(--huedarker);
 		}
@@ -407,7 +401,8 @@
 	<footer>
 		<div class="tal">
 			<p class="mb0">Select a swatch to copy its CSS to your&nbsp;clipboard.</p>
-			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on&nbsp;GitHub</a>
+			<p class="mb0">UMD demo &middot; <a href="jsdelivr.html">jsdelivr</a> &middot; <a href="unpkg.html">unpkg</a>
+				&middot; <a href="https://github.com/famebot/chromagen">source&nbsp;code</a>
 			</p>
 		</div>
 		<div class="tar">
@@ -458,9 +453,9 @@
 				console.log(colorSchemeQueryList)
 				if ((colorSchemeQueryList.media === 'not all')
 					|| (colorSchemeQueryList.matches === true)) {
-					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.lightness}%)`);
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lightness})`);
 				} else {
-					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.darkness}%)`);
+					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darkness})`);
 				}
 			}
 			const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");

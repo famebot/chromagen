@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>chromagen unpkg test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="hsl(172, 94%, 65%)">
+  <meta data-rh="true" property="og:image" content="https://o.famebot.com/file/famebot/chromagen.png" />
+  <style>
+    :root {
+      --logger-color: red;
+      --title-color: black;
+      --hue: 172;
+      --complement: 351;
+      --analogous: 38;
+      --saturation: 94%;
+      --xlight: 92%;
+      --lighter: 83%;
+      --lightness: 65%;
+      --midrange: 54%;
+      --lowmid: 36%;
+      --darkness: 20%;
+      --darker: 9%;
+      /* primary hue variations by lightness */
+      --huexlight: hsl(var(--hue), var(--saturation), var(--xlight));
+      --huelighter: hsl(var(--hue), var(--saturation), var(--lighter));
+      --huehsl: hsl(var(--hue), var(--saturation), var(--lightness));
+      --huemid: hsl(var(--hue), var(--saturation), var(--midrange));
+      --huelowmid: hsl(var(--hue), var(--saturation), var(--lowmid));
+      --huedark: hsl(var(--hue), var(--saturation), var(--darkness));
+      --huedarker: hsl(var(--hue), var(--saturation), var(--darker));
+      /* complement variations by lightness */
+      --complementxlight: hsl(var(--complement), var(--saturation), var(--xlight));
+      --complementlighter: hsl(var(--complement), var(--saturation), var(--lighter));
+      --complementhsl: hsl(var(--complement), var(--saturation), var(--lightness));
+      --complementmid: hsl(var(--complement), var(--saturation), var(--midrange));
+      --complementlowmid: hsl(var(--complement), var(--saturation), var(--lowmid));
+      --complementdark: hsl(var(--complement), var(--saturation), var(--darkness));
+      --complementdarker: hsl(var(--complement), var(--saturation), var(--darker));
+      /* analogous variations by lightness */
+      --analogousxlight: hsl(var(--analogous), var(--saturation), var(--xlight));
+      --analogouslighter: hsl(var(--analogous), var(--saturation), var(--lighter));
+      --analogoushsl: hsl(var(--analogous), var(--saturation), var(--lightness));
+      --analogousmid: hsl(var(--analogous), var(--saturation), var(--midrange));
+      --analogouslowmid: hsl(var(--analogous), var(--saturation), var(--lowmid));
+      --analogousdark: hsl(var(--analogous), var(--saturation), var(--darkness));
+      --analogousdarker: hsl(var(--analogous), var(--saturation), var(--darker));
+    }
+
+    .copy {
+      color: var(--logger-color);
+    }
+
+    #page-title {
+      color: var(--title-color);
+      font-size: min(16vw, 4rem);
+      margin-block: 0.25em 0.5em;
+    }
+
+    body {
+      /*  
+          https://css-tricks.com/the-notch-and-css/
+          https://css-tricks.com/meta-theme-color-and-trickery/
+        */
+      background-color: var(--huehsl);
+      background-image: linear-gradient(var(--huehsl), 50%, var(--analogoushsl), 88%, var(--complementhsl));
+      color: var(--huedarker);
+      flex-direction: column;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Oxygen, Ubuntu, Cantarell, 'Open Sans', Arial, sans-serif;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1152px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      text-align: center;
+      transition-property: background-color, background-image, color;
+    }
+
+    a[href] {
+      color: var(--huedarker);
+    }
+
+    a[href]:visited {
+      color: var(--complementdarker);
+    }
+
+    a[href]:hover,
+    a[href]:active {
+      color: var(--analogousdarker);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="page-title">chromagen unpkg&nbsp;test</h1>
+  <p id="logger" class="copy">colorScheme1 not logged to console</p>
+  <p class="copy">unpkg demo &middot; <a href="jsdelivr.html">jsdelivr</a> &middot; <a href="/">UMD</a> &middot; <a
+      href="https://github.com/famebot/chromagen">source&nbsp;code</a>
+</body>
+
+<script src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"></script>
+<script>
+  const luckyNumber = chromagen.getRandomIntInclusive(1, 69);
+  const colorScheme1 = chromagen.colorScheme();
+  console.log(colorScheme1);
+  // https://davidwalsh.name/css-variables-javascript
+  const docstyle = document.documentElement.style;
+  // mixing values
+  docstyle.setProperty('--hue', colorScheme1.hue);
+  docstyle.setProperty('--complement', colorScheme1.complement);
+  docstyle.setProperty('--analogous', colorScheme1.analogous);
+  docstyle.setProperty('--saturation', colorScheme1.saturation);
+  docstyle.setProperty('--xlight', colorScheme1.xlight);
+  docstyle.setProperty('--lighter', colorScheme1.lighter);
+  docstyle.setProperty('--lightness', colorScheme1.lightness);
+  docstyle.setProperty('--midrange', colorScheme1.midrange);
+  docstyle.setProperty('--lowmid', colorScheme1.lowmid);
+  docstyle.setProperty('--darkness', colorScheme1.darkness);
+  docstyle.setProperty('--darker', colorScheme1.darker);
+  docstyle.setProperty('--logger-color', 'var(--complementdarker)');
+  docstyle.setProperty('--title-color', 'var(--complementhsl)');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme1.hue}, ${colorScheme1.saturation}, ${colorScheme1.lightness})`);
+  document.getElementById('logger').innerHTML = `<p>Lucky hues: Analogous&nbsp;${colorScheme1.analogous}, Complement&nbsp;${colorScheme1.complement}, Primary&nbsp;${colorScheme1.hue}</p><p>Your lucky number is ${luckyNumber}!</p>`;
+</script>
+
+</html>
