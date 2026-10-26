@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/famebot/chromagen/compare/v2.0.0...v2.0.1) (2026-10-25)
+
+### [v2.0.1 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.1)
+
+- update changelog system and rm @rollup/plugin-node-resolve
+
 ## [2.0.0](https://github.com/famebot/chromagen/compare/v1.0.5...v2.0.0) (2026-10-25)
 
 ### [v2.0.0 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.0)
