@@ -1,3 +1,9 @@
+## [2.0.3](https://github.com/famebot/chromagen/compare/v2.0.2...v2.0.3) (2026-10-26)
+
+### [v2.0.3 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.3)
+
+- fix: extra %s in browser demo css; add jsdelivr + unpkg browser tests 97d5698
+
 ## [2.0.2](https://github.com/famebot/chromagen/compare/v2.0.1...v2.0.2) (2026-10-25)
 
 ### [v2.0.2 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.2)
