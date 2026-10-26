@@ -25,17 +25,17 @@ npm i @famebot/chromagen
 ```
 
 ```js
-import chromagen from "@famebot/chromagen";
-const colorScheme = chromagen.colorScheme();
-console.log(colorScheme);
+import { colorScheme } from "@famebot/chromagen";
+const colorScheme1 = colorScheme();
+console.log(colorScheme1);
 ```
 
 CommonJS `require` syntax:
 
 ```js
 const { colorScheme } = require("@famebot/chromagen");
-const colorScheme = colorScheme();
-console.log(colorScheme);
+const colorScheme1 = colorScheme();
+console.log(colorScheme1);
 ```
 
 ### Browser use client-side
@@ -51,13 +51,15 @@ Using the UMD bundle in the browser:
 
 ```html
 <script
-  src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"
-></script>
+  src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"></script>
 <script>
-const colorScheme = chromagen();
-console.log(colorScheme);
+const colorScheme1 = chromagen.colorScheme();
+console.log(colorScheme1);
 </script>
 ```
+
+The [examples](./examples/) all document usage of the `getRandomIntInclusive`
+function as well, which is exported from version 2 onwards.
 
 ### Step by step
 
