@@ -5,11 +5,11 @@
     "type": "module",
     "source": "./src/chromagen.js",
     "exports": {
-        "default": "./dist/chromagen.modern.js",
+        "default": "./src/chromagen.js",
         "require": "./dist/chromagen.cjs"
     },
     "main": "./dist/chromagen.cjs",
-    "module": "./dist/chromagen.module.js",
+    "module": "./src/chromagen.js",
     "umd:main": "./dist/chromagen.umd.js",
     "unpkg": "./dist/chromagen.umd.js",
     "scripts": {

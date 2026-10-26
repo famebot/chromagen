@@ -1,3 +1,9 @@
+## [2.0.2](https://github.com/famebot/chromagen/compare/v2.0.1...v2.0.2) (2026-10-25)
+
+### [v2.0.2 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.2)
+
+- fix: outdated `exports.default` and `module` fields in pkg json
+
 ## [2.0.1](https://github.com/famebot/chromagen/compare/v2.0.0...v2.0.1) (2026-10-25)
 
 ### [v2.0.1 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.1)
