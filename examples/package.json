@@ -1,15 +1,15 @@
 {
 	"name": "chromagen-example",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "@famebot/chromagen example",
 	"scripts": {
 		"build": "echo \"noop: prebuilt\" && exit 0",
 		"cjs": "node node-cjs.cjs",
-		"enpm": "node node-esm-npm.js",
-		"esm": "node node-esm.js",
+		"enpm": "node node-npm.js",
+		"esm": "node node.js",
 		"reset": "rm -rf node_modules pnpm-lock.yaml package-lock.json yarn.lock",
 		"serve": "npx servor browser --reload --browse",
-		"start": "node node-esm.js",
+		"start": "node node.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Ricky de Laveaga (https://rdela.com)",

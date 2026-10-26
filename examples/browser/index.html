@@ -1,8 +1,12 @@
-<!doctype html><html><head><meta charset="utf-8">
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
 	<title>Chromagen</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="theme-color" content="hsl(172, 94%, 65%)">
-	<meta data-rh="true" property="og:image" content="https://o.famebot.com/file/famebot/chromagen.png"/>
+	<meta data-rh="true" property="og:image" content="https://o.famebot.com/file/famebot/chromagen.png" />
 	<style>
 		:root {
 			--hue: 172;
@@ -42,17 +46,20 @@
 			--analogousdarker: hsl(var(--analogous), var(--saturation), var(--darker));
 			--swatch-size: 8.375rem;
 		}
+
 		body,
 		button,
 		.swatches figure span {
 			transition-duration: 0.375s;
 			transition-timing-function: ease-out;
 		}
+
 		body,
 		footer,
 		header {
 			display: flex;
 		}
+
 		body {
 			/*  
 				https://css-tricks.com/the-notch-and-css/
@@ -71,12 +78,14 @@
 			text-align: center;
 			transition-property: background-color, background-image, color;
 		}
+
 		footer,
 		header {
 			align-items: center;
 			justify-content: space-between;
 			margin: 0.75rem 3.5rem 0.75rem;
 		}
+
 		/* footer {
 			margin-block-end: 0;
 		}
@@ -86,13 +95,16 @@
 		a[href] {
 			color: var(--huedarker);
 		}
+
 		a[href]:visited {
 			color: var(--complementdarker);
 		}
+
 		a[href]:hover,
 		a[href]:active {
 			color: var(--analogousdarker);
 		}
+
 		button {
 			background-color: var(--analogoushsl);
 			background-image: linear-gradient(45deg, var(--complementhsl), var(--analogoushsl), var(--huehsl));
@@ -104,36 +116,49 @@
 			margin: 0;
 			transition-property: background-color, background-image, border-color, color;
 		}
+
 		button:focus,
 		button:hover {
 			background-color: var(--complementhsl);
 			background-image: linear-gradient(315deg, var(--huehsl), var(--complementhsl), var(--analogoushsl));
 			border-color: var(--complementdarker);
 		}
+
 		button:active {
 			background-color: var(--huehsl);
 			border-color: var(--analogousdarker);
 		}
+
 		p {
 			margin: 0.5rem 0 0.75rem;
 		}
+
 		h1 {
 			margin-bottom: 0.75rem;
 			margin-top: 0.25rem;
 			line-height: 1.25;
 		}
+
 		.mb0 {
 			margin-bottom: 0;
 		}
+
 		.mt0 {
 			margin-top: 0;
 		}
+
+		.tac {
+			text-align: center;
+		}
+
 		.tal {
 			text-align: left;
 		}
+
 		.tar {
 			text-align: right;
 		}
+
 		.swatches {
 			list-style: none;
 			margin: 0 auto calc(var(--swatch-size) / 8);
@@ -145,10 +170,12 @@
 			justify-content: center;
 			align-items: flex-start;
 		}
+
 		.swatches figure {
 			max-width: var(--swatch-size);
 			margin: 0;
 		}
+
 		.swatches figure span {
 			background-color: gray;
 			display: block;
@@ -158,34 +185,41 @@
 			transition-property: background-color;
 			border-radius: 16.75px;
 			box-shadow: 0.7px 0.7px 1.1px rgba(0, 0, 0, 0.07),
-						1.6px 1.6px 2.7px rgba(0, 0, 0, 0.05),
-						3px 3px 5px rgba(0, 0, 0, 0.042),
-						5.4px 5.4px 8.9px rgba(0, 0, 0, 0.035),
-						10px 10px 16.7px rgba(0, 0, 0, 0.028),
-						24px 24px 40px rgba(0, 0, 0, 0.02);
+				1.6px 1.6px 2.7px rgba(0, 0, 0, 0.05),
+				3px 3px 5px rgba(0, 0, 0, 0.042),
+				5.4px 5.4px 8.9px rgba(0, 0, 0, 0.035),
+				10px 10px 16.7px rgba(0, 0, 0, 0.028),
+				24px 24px 40px rgba(0, 0, 0, 0.02);
 		}
+
 		.swatches figcaption {
 			margin-top: 0.5rem;
 		}
+
 		@media (max-width: 1152px) {
+
 			footer,
 			header {
 				display: block;
 				margin: 0 0.75rem 0.75rem;
 			}
+
 			.mb0 {
 				margin-bottom: 0.75rem;
 			}
+
 			.tal,
 			.tar {
 				text-align: center;
 			}
+
 			.swatches {
 				flex-direction: column;
 				height: calc(var(--swatch-size) * 8);
 				max-width: calc(var(--swatch-size) * 3.25);
 			}
 		}
+
 		@media (max-width: 448px) {
 			.swatches {
 				flex-direction: row;
@@ -193,252 +227,203 @@
 				max-width: 100%;
 			}
 		}
+
 		@media (prefers-color-scheme: dark) {
 			body {
 				background-color: var(--huedark);
 				background-image: linear-gradient(var(--huedark), 50%, var(--analogousdark), 88%, var(--complementdark));
 				color: var(--huelighter);
 			}
+
 			a[href] {
 				color: var(--complementhsl);
 			}
+
 			a[href]:visited {
 				color: var(--huelighter);
 			}
+
 			a[href]:hover,
 			a[href]:active {
 				color: var(--analogoushsl);
 			}
+
 			button {
 				border-color: var(--huehsl);
 			}
+
 			button:focus,
 			button:hover {
 				border-color: var(--complementhsl);
 			}
+
 			button:active {
 				border-color: var(--analogoushsl);
 			}
 		}
+
 		div:where(.swal2-container) div:where(.swal2-popup) {
 			padding: 0 !important;
 		}
+
 		div:where(.swal2-container) h2:where(.swal2-title) {
-			background-color: rgba(255,255,255,0.5);
+			background-color: rgba(255, 255, 255, 0.5);
 			border-radius: 0 0 5px 5px;
 			color: var(--huedarker) !important;
 			padding: .4em 1em .4em !important;
 		}
 	</style>
-</head><body>
+</head>
+
+<body>
 	<header>
 		<h1 class="mb0 mt0 tal">Chromagen</h1>
-		<p class="mb0 mt0 tar"><span id="chromagen-hue"></span></p>
+		<p class="mb0 mt0 tac"><span id="chromagen-hue"></span></p>
 		<button onclick="rainbow()">Regenerate Colors</button>
 	</header>
 	<ul class="swatches">
 		<li>
 			<figure>
-				<span
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huexlight);"
-					title="hue xlight"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huexlight);" title="hue xlight"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huelighter);"
-					title="hue lighter"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huelighter);"
+					title="hue lighter"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huehsl);"
-					title="hue"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huehsl);" title="hue"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huemid);"
-					title="hue mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huemid);" title="hue mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huelowmid);"
-					title="hue low mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huelowmid);"
+					title="hue low mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huedark);"
-					title="hue dark"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huedark);" title="hue dark"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--huedarker);"
-					title="hue darker"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--huedarker);" title="hue darker"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogousxlight);"
-					title="analogous xlight"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogousxlight);"
+					title="analogous xlight"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogouslighter);"
-					title="analogous lighter"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogouslighter);"
+					title="analogous lighter"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogoushsl);"
-					title="analogous"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogoushsl);"
+					title="analogous"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogousmid);"
-					title="analogous mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogousmid);"
+					title="analogous mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogouslowmid);"
-					title="analogous low mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogouslowmid);"
+					title="analogous low mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogousdark);"
-					title="analogous dark"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogousdark);"
+					title="analogous dark"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--analogousdarker);"
-					title="analogous darker"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--analogousdarker);"
+					title="analogous darker"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementxlight);"
-					title="complement xlight"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementxlight);"
+					title="complement xlight"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementlighter);"
-					title="complement lighter"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementlighter);"
+					title="complement lighter"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementhsl);"
-					title="complement"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementhsl);"
+					title="complement"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementmid);"
-					title="complement mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementmid);"
+					title="complement mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementlowmid);"
-					title="complement low mid"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementlowmid);"
+					title="complement low mid"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementdark);"
-					title="complement dark"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementdark);"
+					title="complement dark"></span>
 			</figure>
 		</li>
 		<li>
 			<figure>
-				<span 
-					onClick="copyBackgroundColor(this)"
-					style="background-color: var(--complementdarker);"
-					title="complement darker"
-				></span>
+				<span onClick="copyBackgroundColor(this)" style="background-color: var(--complementdarker);"
+					title="complement darker"></span>
 			</figure>
 		</li>
 	</ul>
 	<footer>
 		<div class="tal">
 			<p class="mb0">Select a swatch to copy its CSS to your&nbsp;clipboard.</p>
-			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on&nbsp;GitHub</a></p>
+			<p class="mb0">UMD edition &middot; <a href="https://github.com/famebot/chromagen">Source code on&nbsp;GitHub</a>
+			</p>
 		</div>
 		<div class="tar">
-			<p class="mb0 mt0">Supports <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and dark&nbsp;mode.</a></p>
+			<p class="mb0 mt0">Supports <a
+					href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme">light and
+					dark&nbsp;mode.</a></p>
 			<p class="mb0">
-				Toggle light/dark: 
-				<a href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a> &middot; 
-				<a href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a> &middot; 
-				<a href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate_css_media_feature_prefers-color-scheme">Chrome</a>
+				Toggle light/dark:
+				<a
+					href="https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_and_edit_css/index.html#view-media-rules-for-prefers-color-scheme">Firefox</a>
+				&middot;
+				<a
+					href="https://webkit.org/blog/13966/webkit-features-in-safari-16-4/#tooling-for-conditionals-in-css">Safari</a>
+				&middot;
+				<a
+					href="https://developer.chrome.com/docs/devtools/rendering/emulate-css/#emulate_css_media_feature_prefers-color-scheme">Chrome</a>
 			</p>
 		</div>
 	</footer>
@@ -449,7 +434,9 @@
 	 -->
 	<script>
 		const rainbow = () => {
-			const colorScheme = chromagen();
+			const luckyNumber = chromagen.getRandomIntInclusive(1, 69);
+			console.log('\nYour lucky number is ' + luckyNumber + '!')
+			const colorScheme = chromagen.colorScheme();
 			console.log(colorScheme);
 			// https://davidwalsh.name/css-variables-javascript
 			const docstyle = document.documentElement.style;
@@ -465,12 +452,12 @@
 			docstyle.setProperty('--lowmid', colorScheme.lowmid);
 			docstyle.setProperty('--darkness', colorScheme.darkness);
 			docstyle.setProperty('--darker', colorScheme.darker);
-			
+
 			function activateColorScheme() {
 				const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
 				console.log(colorSchemeQueryList)
-				if ((colorSchemeQueryList.media === 'not all') 
-				|| (colorSchemeQueryList.matches === true)) {
+				if ((colorSchemeQueryList.media === 'not all')
+					|| (colorSchemeQueryList.matches === true)) {
 					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.lightness}%)`);
 				} else {
 					document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${colorScheme.hue}, ${colorScheme.saturation}%, ${colorScheme.darkness}%)`);
@@ -481,8 +468,8 @@
 			darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
 			lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 			activateColorScheme();
-			
-			document.getElementById('chromagen-hue').innerHTML = `Hues: Analogous&nbsp;${colorScheme.analogous }, Complement&nbsp;${colorScheme.complement}, Primary&nbsp;${colorScheme.hue}`;
+
+			document.getElementById('chromagen-hue').innerHTML = `Your lucky number is ${luckyNumber}!<br/>Lucky hues: Analogous&nbsp;${colorScheme.analogous}, Complement&nbsp;${colorScheme.complement}, Primary&nbsp;${colorScheme.hue}`;
 		}
 		rainbow();
 	</script>
@@ -519,12 +506,14 @@
 				});
 			}
 		}
-		
-		function copyBackgroundColor(cSpan) {
-			const bColorProp = cSpan.style.backgroundColor.slice(4,-1)
+
+		function copyBackgroundColor(colorSpan) {
+			const bColorProp = colorSpan.style.backgroundColor.slice(4, -1)
 			const bColor = getComputedStyle(document.documentElement).getPropertyValue(bColorProp);
 			console.log(bColor);
 			copyText(bColor);
 		}
 	</script>
-</body></html>
+</body>
+
+</html>

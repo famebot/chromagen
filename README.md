@@ -12,11 +12,11 @@ Color scheme generator
 
 ## Installation and Usage
 
-Chromagen uses [Microbundle](https://github.com/developit/microbundle) to
-produce ESM ([ECMAScript modules](https://nodejs.org/api/esm.html)), CJS
+Chromagen uses [Rollup](https://rollupjs.org/) to produce CJS
 ([CommonJS](https://nodejs.org/api/modules.html)), and UMD
 ([Universal Module Definition](https://github.com/umdjs/umd)) bundles that work
-in various environments.
+in place of its ESM ([ECMAScript modules](https://nodejs.org/api/esm.html))
+source in environments with those restrictions.
 
 ### Node.js and similar environments
 
@@ -25,17 +25,17 @@ npm i @famebot/chromagen
 ```
 
 ```js
-import chromagen from "@famebot/chromagen";
-const colorScheme = chromagen();
-console.log(colorScheme);
+import { colorScheme } from "@famebot/chromagen";
+const colorScheme1 = colorScheme();
+console.log(colorScheme1);
 ```
 
 CommonJS `require` syntax:
 
 ```js
-const chromagen = require("@famebot/chromagen");
-const colorScheme = chromagen();
-console.log(colorScheme);
+const { colorScheme } = require("@famebot/chromagen");
+const colorScheme1 = colorScheme();
+console.log(colorScheme1);
 ```
 
 ### Browser use client-side
@@ -51,13 +51,15 @@ Using the UMD bundle in the browser:
 
 ```html
 <script
-  src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"
-></script>
+  src="https://unpkg.com/@famebot/chromagen/dist/chromagen.umd.js"></script>
 <script>
-  const colorScheme = chromagen();
-  console.log(colorScheme);
+const colorScheme1 = chromagen.colorScheme();
+console.log(colorScheme1);
 </script>
 ```
+
+The [examples](./examples/) all document usage of the `getRandomIntInclusive`
+function as well, which is exported from version 2 onwards.
 
 ### Step by step
 
@@ -85,8 +87,8 @@ complement. The generated object for the example scheme in the image above was:
 Since [v1](https://github.com/famebot/chromagen/releases/tag/v1.0.0), Chromagen
 returns the percent symbol with all mixing values except hues.
 
-Check [`src/index.js`](./src/index.js) for the nitty gritty. We summarize
-breaking changes in the [changelog](./CHANGELOG.md) and the
+Check [`src/chromagen.js`](./src/chromagen.js) for the nitty gritty. We
+summarize breaking changes in the [changelog](./CHANGELOG.md) and the
 [release history on GitHub](https://github.com/famebot/chromagen/releases).
 
 ## License

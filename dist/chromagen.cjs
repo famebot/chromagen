@@ -1,2 +1,67 @@
-var a=function(a,r){return Math.floor(Math.random()*(r-a+1))+a};module.exports=function(){var r,e=a(1,359),t=e>180?e-180:e+179;switch(e){case e<135:r=e+224;break;case e>224:r=e-223;break;default:var n=e+225;r=n>359?n-359:n}return{hue:e,complement:t,analogous:r,saturation:a(80,100)+"%",xlight:a(84,92)+"%",lighter:a(76,84)+"%",lightness:a(64,72)+"%",midrange:a(48,64)+"%",lowmid:a(28,36)+"%",darkness:a(16,24)+"%",darker:a(0,12)+"%"}};
-//# sourceMappingURL=chromagen.cjs.map
+'use strict';
+
+// Returns a random integer between min (included) and max (included)
+// Math.floor because Math.round() yields non-uniform distribution
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+const getRandomIntInclusive = (min, max) => {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const colorScheme = () => {
+	// Seed the primary color
+	const hue = getRandomIntInclusive(1, 359);
+	// Comment out above line and uncomment below to test specific values
+	// const hue = 9; // 128 173 (test values)
+
+	// Derive complement (secondary) hue
+	var complement = hue > 180 ? hue - 180 : hue + 179;
+
+	// analogous (tertiary) hue
+	var analogous;
+	switch (hue) {
+		case hue < 135:
+			analogous = hue + 224;
+			break;
+		case hue > 224:
+			analogous = hue - 223;
+			break;
+		default:
+			var shift = hue + 225;
+			analogous = shift > 359 ? shift - 359 : shift;
+	}
+
+	// Seed random saturation and lightness values within acceptable parameters
+	const saturation = `${getRandomIntInclusive(80, 100)}%`;
+	// highlight
+	const xlight = `${getRandomIntInclusive(84, 92)}%`;
+	// more extreme lightness
+	const lighter = `${getRandomIntInclusive(76, 84)}%`;
+	// very light or white text
+	const lightness = `${getRandomIntInclusive(64, 72)}%`;
+	// mid value used for lightness and saturation
+	const midrange = `${getRandomIntInclusive(48, 64)}%`;
+	// dark highlight
+	const lowmid = `${getRandomIntInclusive(28, 36)}%`;
+	// very dark or black text
+	const darkness = `${getRandomIntInclusive(16, 24)}%`;
+	// more extreme darkness
+	const darker = `${getRandomIntInclusive(0, 12)}%`;
+
+	// mixing values
+	return {
+		hue: hue,
+		complement: complement,
+		analogous: analogous,
+		saturation: saturation,
+		xlight: xlight,
+		lighter: lighter,
+		lightness: lightness,
+		midrange: midrange,
+		lowmid: lowmid,
+		darkness: darkness,
+		darker: darker,
+	};
+};
+
+exports.colorScheme = colorScheme;
+exports.getRandomIntInclusive = getRandomIntInclusive;

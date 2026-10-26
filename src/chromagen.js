@@ -5,7 +5,7 @@ const getRandomIntInclusive = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-export default () => {
+const colorScheme = () => {
 	// Seed the primary color
 	const hue = getRandomIntInclusive(1, 359);
 	// Comment out above line and uncomment below to test specific values
@@ -60,3 +60,5 @@ export default () => {
 		darker: darker,
 	};
 };
+
+export { getRandomIntInclusive, colorScheme };
