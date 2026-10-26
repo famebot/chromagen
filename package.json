@@ -15,9 +15,8 @@
     "scripts": {
         "build": "rollup -c && cp dist/chromagen.umd.js examples/browser",
         "dev": "rollup -cw",
-        "changelog": "conventional-changelog -p conventionalcommits",
         "format": "prettier --single-quote --print-width 100 --use-tabs --write src/*.js src/**/*.js",
-        "release": "npm run build && bumpp -x \"npm run changelog\" --all --commit --tag --push",
+        "release": "npm run build && bumpp -x \"npm run format\" --all --commit --tag --push",
         "publish": "npm publish --access public",
         "test": "mocha"
     },
@@ -40,13 +39,11 @@
         "scheme"
     ],
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^29.0.3",
+        "@rollup/plugin-terser": "^1.0.2",
         "bumpp": "^12.2.2",
-        "conventional-changelog-cli": "^5.0.0",
         "mocha": "^12.0.3",
         "prettier": "^3.9.10",
-        "@rollup/plugin-commonjs": "^29.0.3",
-        "@rollup/plugin-node-resolve": "^16.0.3",
-        "@rollup/plugin-terser": "^1.0.2",
         "rollup": "^4.65.0"
     }
 }

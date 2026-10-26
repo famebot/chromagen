@@ -1,3 +1,62 @@
+## [2.0.0](https://github.com/famebot/chromagen/compare/v1.0.5...v2.0.0) (2026-10-25)
+
+### [v2.0.0 release notes](https://github.com/famebot/chromagen/releases/tag/v2.0.0)
+
+- **BREAKING CHANGE** named exports
+
+```js
+import { colorScheme, getRandomIntInclusive } from "@famebot/chromagen";
+const colorScheme1 = colorScheme();
+console.log("\nYour lucky color scheme is:\n");
+console.log(colorScheme1);
+console.log("\nYour lucky number is " + getRandomIntInclusive(1, 69) + "!");
+```
+
+```
+Your lucky color scheme is:
+
+{
+  hue: 140,
+  complement: 319,
+  analogous: 6,
+  saturation: '83%',
+  xlight: '91%',
+  lighter: '81%',
+  lightness: '70%',
+  midrange: '61%',
+  lowmid: '30%',
+  darkness: '19%',
+  darker: '10%'
+}
+
+Your lucky number is 10!
+```
+
+As usual, see
+[examples](https://github.com/famebot/chromagen/tree/trunk/examples) for exact
+platform-specific code.
+
+### Other changes
+
+- switch from microbundle to rollup + simplify bundles
+  [#71](https://github.com/famebot/chromagen/pull/71)
+- update changelog manually from now on
+
+### 🧱 Dependencies
+
+- chore(deps-dev): bump mocha from 11.7.5 to 11.7.6 by @dependabot[bot] in
+  https://github.com/famebot/chromagen/pull/64
+- chore(deps-dev): bump prettier from 3.8.1 to 3.8.3 by @dependabot[bot] in
+  https://github.com/famebot/chromagen/pull/65
+- chore(deps-dev): bump prettier from 3.8.3 to 3.9.6 by @dependabot[bot] in
+  https://github.com/famebot/chromagen/pull/68
+- chore(deps-dev): bump bumpp from 11.1.0 to 12.2.2 by @dependabot[bot] in
+  https://github.com/famebot/chromagen/pull/69
+- chore(deps-dev): bump mocha from 11.7.6 to 11.8.0 by @dependabot[bot] in
+  https://github.com/famebot/chromagen/pull/70
+
+[**Full Changelog**](https://github.com/famebot/chromagen/compare/v1.0.5...v2.0.0)
+
 ## [1.0.5](https://github.com/famebot/chromagen/compare/v1.0.4...v1.0.5) (2026-05-18)
 
 - Dependency + changelog updates
